@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 1em;
+    column-gap: 0.75em;
     min-width: 7em;
     min-height: 2.5em;
     box-sizing: border-box;
@@ -12,21 +12,41 @@
     font-weight: 500;
     font-family: var(--fontFamily);
     text-decoration: none;
+    border-radius: var(--borderRadius);
     color: var(--primaryColor);
     border: 1px solid var(--borderColor);
-    border-radius: var(--borderRadius);
-    background-color: var(--backgroundColor);
-    transition: all 0.2s ease-in-out;
+    background-color: var(--buttonColor);
+    transition: all 0.3s ease-in-out;
     z-index: 0;
     cursor: pointer;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 0em;
+        height: 300%;
+        background-color: var(--primaryColor);
+        transition: all 0.4s ease-in-out;
+        border: none;
+        opacity: 0;
+        transform: rotate(35deg);
+        z-index: -1;
+    }
 
     &:hover {
-        color: var(--secondaryColor);
-        border-top-color: var(--secondaryColor);
-        border-right-color: var(--secondaryColor);
-        box-shadow: -2px 2px 1px 1px var(--secondaryColor);
-        transform: translateX(1px) translateY(-1px);
+        border: 1px solid var(--borderColor);
+        color: var(--backgroundColor);
+
+        &::after {
+            background-color: var(--primaryColor);
+            width: 180%;
+            opacity: 1;
+        }
+
     }
+
+
 
     &_logo {
         width: 1.5em;
@@ -34,17 +54,24 @@
     }
 
     &_secondary {
-        background-color: var(--textColor);
+        border: 1px solid var(--borderColor);
+        background-color: var(--primaryColor);
         color: var(--backgroundColor);
-        border: 1px solid var(--backgroundColor);
-        font-weight: 600;
+
+        &::after {
+            background-color: var(--buttonColor);
+        }
+
 
         &:hover {
-            color: var(--backgroundColor);
-            border-top-color: var(--backgroundColor);
-            border-right-color: var(--backgroundColor);
-            //box-shadow: -2px 2px 1px 1px var(--backgroundColor);
-            transform: translateX(1px) translateY(-1px);
+
+            color: var(--primaryColor);
+
+
+            //background-color: var(--backgroundColor);
+            &::after {
+                background-color: var(--buttonColor);
+            }
         }
     }
 }

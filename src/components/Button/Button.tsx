@@ -8,9 +8,10 @@ interface Props {
 	text?: string
 	children: React.JSX.Element
 	isSecondary?: boolean
+	id?: string
 }
 
-export function Button({ type, href, text, children, isSecondary }: Props) {
+export function Button({ type, href, text, children, isSecondary, id }: Props) {
 
 
 	return (
@@ -18,7 +19,7 @@ export function Button({ type, href, text, children, isSecondary }: Props) {
 			{
 				type === "Link" &&
 				<a
-					className={style.button}
+					className={`${style.button} ${isSecondary && style.button_secondary}`}
 					href={href}
 					target="_blank"
 				>
@@ -29,7 +30,7 @@ export function Button({ type, href, text, children, isSecondary }: Props) {
 			}
 			{
 				type === "Button" &&
-				<button className={`${style.button} ${isSecondary && style.button_secondary}`}>
+				<button id={id} className={`${style.button} ${isSecondary && style.button_secondary}`}>
 					{children}
 					{text}
 				</button>
@@ -39,9 +40,3 @@ export function Button({ type, href, text, children, isSecondary }: Props) {
 	)
 
 }
-
-/*
-<style>
-
-</style>
-*/

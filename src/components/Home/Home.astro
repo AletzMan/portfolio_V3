@@ -1,0 +1,136 @@
+---
+import { Button } from "../Button/Button"
+import TechTypeIcon from "../TechTypeIcon.astro"
+import GitHub from "../svg/GitHub.astro"
+import LinkedIn from "../svg/LinkedIn.astro"
+import Download from "../svg/Download.astro"
+import ButtonMail from "./ButtonMail.astro"
+import Section from "../Section/Section.astro"
+---
+
+<Section title="Inicio">
+	<article class="home_content">
+		<picture class="home_picture">
+			<img class="photoProfile" src="/profile-photo.webp" alt="Alejandro Garcia" />
+		</picture>
+		<h1>Alejandro Garcia</h1>
+		<h2>Software Developer</h2>
+		<div class="techs">
+			<TechTypeIcon type="web" />
+			<TechTypeIcon type="mobile" />
+			<TechTypeIcon type="desktop" />
+		</div>
+		<div class="socialButtons">
+			<Button type="Link" text="GitHub" href="https://github.com/AletzMan" isSecondary>
+				<GitHub />
+			</Button>
+			<Button
+				type="Link"
+				text="LinkedIn"
+				href="https://www.linkedin.com/in/alejandro-garcia-alonso-596788b8/"
+				isSecondary
+			>
+				<LinkedIn />
+			</Button>
+			<ButtonMail />
+			<Button id="buttonCV" type="Button" text="Descargar CV">
+				<Download />
+			</Button>
+		</div>
+	</article>
+</Section>
+<style>
+	.home_content {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		text-align: center;
+		padding: 1rem;
+		box-sizing: border-box;
+	}
+
+	.home_content h1 {
+		font-size: 3rem;
+		padding: 0;
+		height: max-content;
+		margin: 0;
+	}
+
+	.home_content h2 {
+		padding: 0;
+		margin: 0;
+		font-size: 2rem;
+		color: var(--secondaryColor);
+	}
+
+	.home_content p {
+		margin-top: 2rem;
+		font-size: 1.5rem;
+	}
+
+	.home_picture {
+		position: relative;
+		width: 200px;
+		height: 200px;
+		margin-top: 2rem;
+		padding: 0.25em;
+		border: 3px solid var(--secondaryColor);
+		background-color: var(--backgroundColor);
+		border-radius: 15em;
+		/*overflow: hidden;*/
+
+		&::after {
+			position: absolute;
+			left: -0.5em;
+			top: -0.5em;
+			content: "";
+			width: 110%;
+			height: 110%;
+			border-radius: 15em;
+			background-color: #d2cdcd25;
+			z-index: -1;
+		}
+		/*view-timeline-name: --image;
+		view-timeline-axis: block;
+		animation-timeline: --image;
+		animation-name: show;
+		animation-range: entry 25% cover 50%;
+		animation-fill-mode: both;*/
+	}
+
+	/*@keyframes show {
+		from {
+			opacity: 0;
+			scale: 25%;
+		}
+		to {
+			opacity: 1;
+			scale: 100%;
+		}
+	}*/
+
+	.photoProfile {
+		width: 100%;
+		height: 100%;
+		border-radius: 15em;
+		/*filter: sepia(1) blur(10px);*/
+	}
+
+	.socialButtons {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 1em;
+		/*background-color: red;*/
+	}
+
+	.techs {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 1em;
+		margin: 0 0 3em 0;
+	}
+</style>

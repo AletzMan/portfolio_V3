@@ -1,63 +1,41 @@
 ---
+import ButtonLanguage from "./ButtonLanguage.astro"
 import ThemeIcon from "./ThemeIcon.astro"
-import Logo from "./Logo.astro"
-const Links = [
-	{ href: "", label: "Inicio" },
-	{ href: "about", label: "Sobre mí" },
-	{ href: "work", label: "Trabajos" },
-	{ href: "projects", label: "Proyectos" },
-	{ href: "contact", label: "Contacto" },
-]
+import NavigationMenu from "./NavigationMenu/NavigationMenu"
 ---
 
 <header class="header">
-	<Logo />
-	<nav class="nav">
-		{
-			Links.map((link) => (
-				<a href={link.href} class="nav-link">
-					{link.label}
-				</a>
-			))
-		}
-	</nav>
-	<ThemeIcon />
+	<NavigationMenu />
+	<div class="header_options">
+		<!-- -->
+		<ButtonLanguage />
+		<ThemeIcon />
+	</div>
 </header>
-
 <style>
 	.header {
+		position: fixed;
+		top: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
+		width: calc(100% - 2em);
+		max-width: calc(var(--maxWidth) - 2em);
 		height: 3.5rem;
 		margin: 1em auto 0 auto;
 		border-radius: var(--borderRadius);
-		background-color: #47484845;
-		border: 1px solid #57556acc;
+		background-color: #bbb9b920;
+		border: 1px solid var(--borderColor);
 		backdrop-filter: blur(10px);
-		z-index: 2;
-	}
+		z-index: 5;
 
-	.nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-		width: 100%;
-
-		& .nav-link {
-			text-decoration: none;
-			/*color: var(--textColor);*/
-			color: currentColor;
-			font-weight: 600;
-			font-size: 0.85em;
-
-			&:first-child {
-				color: var(--secondaryColor);
-				padding: 0em 1em;
-				border-top: 2px solid var(--secondaryColor);
-				border-bottom: 2px solid var(--secondaryColor);
-			}
+		& .header_options {
+			display: flex;
+			flex-direction: row;
+			column-gap: 1em;
+			position: absolute;
+			right: 0;
+			padding: 0 1em 0 0;
 		}
 	}
 </style>

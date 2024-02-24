@@ -1,0 +1,111 @@
+---
+import { Button } from "../Button/Button"
+import Email from "../svg/Email.astro"
+import Copy from "../svg/Copy.astro"
+import Send from "../svg/Send.astro"
+
+const MAIL = "alejandro.ga.dev@gmail.com"
+---
+
+<div class="mailContainer">
+	<Button id="buttonMail" type="Button" text="Email" isSecondary>
+		<Email />
+	</Button>
+	<div id="menuMail" class="menuMail">
+		<button
+			id="buttonCopy"
+			class="buttonCopySend"
+			title="Copiar correo electrónico"
+			aria-label="Copiar correo electrónico"
+		>
+			<Copy />
+			Copiar
+		</button>
+		<a
+			id="buttonSend"
+			class="buttonCopySend"
+			href={`mailto:${MAIL}`}
+			title="Enviar correo electrónico"
+			aria-label="Enviar correo electrónico"
+		>
+			<Send />
+			Enviar
+		</a>
+	</div>
+</div>
+<script is:inline>
+	const buttonMail = document.getElementById("buttonMail")
+	const menuMail = document.getElementById("menuMail")
+	const buttonCopy = document.getElementById("buttonCopy")
+
+	const MAIL = "alejandro.ga.dev@gmail.com"
+
+	const HandlerClickButton = () => {
+		menuMail.classList.toggle("menuMail_active")
+	}
+
+	const HandlerClickMail = () => {
+		navigator.clipboard.writeText(MAIL)
+		menuMail.classList.remove("menuMail_active")
+	}
+
+	const HandlerBlurMenuMail = () => {
+		menuMail.classList.remove("menuMail_active")
+	}
+
+	buttonMail.addEventListener("click", HandlerClickButton)
+	buttonCopy.addEventListener("click", HandlerClickMail)
+	buttonMail.addEventListener("blur", HandlerBlurMenuMail)
+</script>
+<style>
+	.mailContainer {
+		position: relative;
+	}
+
+	.menuMail {
+		/*display: none;*/
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.25em;
+		left: 0;
+		top: 2em;
+		width: 100%;
+		max-height: 0;
+		opacity: 0;
+		border: none;
+		border-radius: var(--borderRadius);
+		background-color: var(--primaryColor);
+		border: 1px solid var(--borderColor);
+		overflow: hidden;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.menuMail_active {
+		max-height: 3.75em;
+		padding: 0.25em;
+		opacity: 1;
+	}
+
+	.buttonCopySend {
+		display: grid;
+		grid-template-columns: 1.5em 1fr;
+		place-items: center center;
+		column-gap: 1em;
+		font-size: 0.7em;
+		width: 100%;
+		padding: 0.15em 0.3em;
+		font-family: var(--fontFamily);
+		border: none;
+		transition: all 0.25s ease-in-out;
+		cursor: pointer;
+		text-decoration: none;
+		color: var(--backgroundColor);
+		background-color: transparent;
+
+		&:hover {
+			background-color: var(--backgroundColor);
+			color: var(--primaryColor);
+		}
+	}
+</style>

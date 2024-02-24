@@ -1,0 +1,20 @@
+---
+interface Props {
+	class?: string
+}
+const { class: className, ...rest } = Astro.props
+---
+
+<svg class={`iconAdd ${className}`} {...rest} width="1em" height="1em" viewBox="0 0 24 24">
+	<path
+		fill="none"
+		stroke="currentColor"
+		stroke-linecap="square"
+		stroke-linejoin="round"
+		d="M12 6v12m6-6H6"></path>
+</svg>
+<style>
+	.iconAdd {
+		transform: scale(1.1);
+	}
+</style>

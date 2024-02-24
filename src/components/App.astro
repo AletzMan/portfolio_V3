@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Header from "../components/Header.astro"
+import Home from "../components/Home/Home.astro"
+
+import { getI18n } from "../i18n/index"
+const { currentLocale } = Astro
+const i18n = getI18n({ currentLocale })
+---
+
+<Layout title="Portfolio Alejandro Garcia" description={i18n.SEO_Description}>
+	<main>
+		<Header />
+		<Home />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		width: 100%;
+		padding: 0 1em;
+		max-width: var(--maxWidth);
+		font-size: 20px;
+		line-height: 1.6;
+		color: currentColor;
+		z-index: 3;
+	}
+</style>

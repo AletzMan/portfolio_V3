@@ -1,0 +1,112 @@
+---
+
+---
+
+<button id="languageToggle">
+	<div class="buttonLanguage">
+		<span class="eng tagLanguage">EN</span>
+		<span class="esp tagLanguage">ES</span>
+		<div class="buttonLanguage_button"></div>
+	</div>
+</button>
+
+<style>
+	#languageToggle {
+		position: relative;
+		border: 0;
+		background: none;
+		cursor: pointer;
+		border: 1px solid var(--borderColor);
+		border-radius: 3em;
+	}
+
+	.tagLanguage {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		font-size: 0.8em;
+		color: var(--primaryColor);
+		background-color: var(--backgroundColor);
+		transition: all 0.2s ease-in-out;
+	}
+	.eng {
+		left: 0;
+		padding: 0 0 0 1.75em;
+
+		transform: translateX(0px);
+	}
+	.esp {
+		position: absolute;
+		transform: translateX(-50px);
+	}
+
+	.buttonLanguage {
+		position: relative;
+		width: 46px;
+		height: 24px;
+		background-color: var(--primaryColor);
+		border-radius: 1em;
+		overflow: hidden;
+
+		& .buttonLanguage_button {
+			left: 3px;
+			top: 3px;
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			transform: scale(1) translateX(0);
+			background-color: var(--textColor);
+			transition: all 0.2s ease-in-out;
+		}
+	}
+</style>
+<script is:inline>
+	const buttonLanguage = document.querySelector(".buttonLanguage_button")
+	const tagES = document.querySelector(".esp")
+	const tagEN = document.querySelector(".eng")
+	let currentLanguage = ""
+
+	const handleClickLanguage = () => {
+		ChangeLanguage()
+	}
+
+	const ChangeLanguage = () => {
+		const newLanguage = localStorage.getItem("language") === "en" ? "es" : "en"
+		localStorage.setItem("language", newLanguage)
+		currentLanguage = newLanguage
+		ChangeStatusButton(newLanguage)
+	}
+
+	const ChangeStatusButton = (lan) => {
+		if (lan === "es") {
+			tagEN.style.transform = "translateX(2em)"
+			tagES.style.transform = "translateX(-0.9em)"
+			buttonLanguage.style.transform = "translateX(1.6em)"
+		} else {
+			tagEN.style.transform = "translateX(0)"
+			tagES.style.transform = "translateX(-3em)"
+			buttonLanguage.style.transform = "translateX(0)"
+		}
+	}
+	const language = (() => {
+		if (typeof localStorage !== "undefined" && localStorage.getItem("language")) {
+			const lan = localStorage.getItem("language")
+			currentLanguage = lan
+			ChangeStatusButton(lan)
+			return lan
+		}
+		ChangeStatusButton("es")
+		return "es"
+	})()
+
+	window.localStorage.setItem("language", language)
+
+	document.getElementById("languageToggle").addEventListener("click", handleClickLanguage)
+</script>

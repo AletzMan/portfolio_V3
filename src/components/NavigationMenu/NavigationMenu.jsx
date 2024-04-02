@@ -19,12 +19,11 @@ export default function NavigationMenu(props) {
 	}, [])
 
 	const handleScroll = () => {
-		const scrollY = window.scrollY
 		if (scrollY < 500) setScroll("home")
 		if (scrollY > 500 && scrollY < 1400) setScroll("works")
 		if (scrollY > 1400 && scrollY < 2300) setScroll("projects")
-		if (scrollY > 2300 && scrollY < 3200) setScroll("experience")
-		if (scrollY > 3200) setScroll("contact")
+		if (scrollY > 2977 && scrollY < 4640) setScroll("experience")
+		if (scrollY > 4640) setScroll("contact")
 	}
 
 	return (

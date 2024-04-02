@@ -1,3 +1,10 @@
-<svg class="socialButton_logo" width="20" height="20" viewBox="0 0 24 24">
+---
+interface Props {
+	class?: string
+}
+const { class: className } = Astro.props
+---
+
+<svg class=`socialButton_logo ${className}` width="20" height="20" viewBox="0 0 24 24">
 	<path fill="currentColor" d="M2.01 21L23 12L2.01 3L2 10l15 2l-15 2z"></path>
 </svg>

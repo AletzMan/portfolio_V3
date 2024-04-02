@@ -1,0 +1,107 @@
+---
+import Section from "../Section/Section.astro"
+import { getI18n } from "../../i18n/index"
+import SocialButtons from "../SocialButtons.astro"
+import { Form } from "../Form/Form"
+const { currentLocale } = Astro
+const i18n = getI18n({ currentLocale })
+---
+
+<Section title={i18n.navigationMenu.contact.text} class="section_contact" id="contact">
+	<article class="contact">
+		<h2 class="contact_title">{i18n.contactSection.title}</h2>
+		<div class="contact_content">
+			<div class="contact_container">
+				{
+					i18n.contactSection.message.map((message) => (
+						<p class="contact_message">{message}</p>
+					))
+				}
+				<div class="contact_buttons">
+					<SocialButtons hasButtonMail />
+				</div>
+			</div>
+			<Form client:load formTraductions={i18n.contactSection.form} />
+		</div>
+	</article>
+</Section>
+<style>
+	.contact {
+		position: relative;
+		/*max-width: 45em;*/
+		width: 100%;
+		padding: 0.5em 0.5em 0.5em 1em;
+		margin: 5em 0 0 0;
+		border: 1px dashed var(--tabColor);
+		background: linear-gradient(-45deg, #151c27, #222c40, #151c27);
+		border-radius: 0.5em;
+		pointer-events: all;
+
+		@media (width < 698px) {
+			padding: 0.5em;
+		}
+
+		& .contact_title {
+			text-align: center;
+			color: var(--secondaryColor);
+			padding: 0.25em 0 1.5em 0;
+		}
+
+		& .contact_message {
+			font-size: 0.7em;
+			margin: 0 0 0.75em 0;
+			text-align: center;
+			color: var(--primaryColor);
+
+			&:nth-child(1) {
+				padding: 3em 0 0 0;
+			}
+
+			&:nth-child(2) {
+				color: var(--tertiaryColor);
+				font-weight: 700;
+			}
+		}
+
+		& .contact_buttons {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			padding: 2em 0 1em 0;
+			border-top: 1px dashed var(--borderColor);
+		}
+
+		/*view-timeline-name: --image;
+		view-timeline-axis: block;
+		animation-timeline: --image;
+		animation-name: show;
+		animation-range: entry 5% cover 50%;
+		animation-fill-mode: both;
+*/
+		& .contact_content {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+			column-gap: 1em;
+			row-gap: 2em;
+		}
+	}
+
+	.contact_container {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		padding: 1em;
+		width: 100%;
+		height: 100%;
+	}
+
+	@keyframes show {
+		from {
+			opacity: 0;
+			scale: 75%;
+		}
+		to {
+			opacity: 1;
+			scale: 100%;
+		}
+	}
+</style>

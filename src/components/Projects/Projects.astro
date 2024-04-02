@@ -1,0 +1,37 @@
+---
+import Section from "../Section/Section.astro"
+import ProjectView from "../ProjectView/ProjectView.astro"
+
+import { getI18n } from "../../i18n/index"
+import type { Ii18n } from "../../Types/i18n"
+const { currentLocale } = Astro
+const i18n = getI18n({ currentLocale })
+const translations: Ii18n = i18n as Ii18n
+---
+
+<Section title={translations.navigationMenu.projects.text} id="projects">
+	<div class="projects">
+		{translations.projectsSection.projects.map((project) => <ProjectView project={project} />)}
+	</div>
+</Section>
+
+<style>
+	.projects {
+		position: relative;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		column-gap: 1em;
+		row-gap: 3em;
+		width: 100%;
+		padding: 6em 0 1em 0;
+
+		@media (width < 655px) {
+			padding: 5em 0em 0em 0em;
+		}
+
+		@media (width < 450px) {
+			/**/
+		}
+	}
+</style>

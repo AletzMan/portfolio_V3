@@ -1,0 +1,220 @@
+---
+import type { Ii18nProject } from "../../Types/i18n"
+import { Button } from "../Button/Button"
+import TechTypeIcon from "../TechTypeIcon.astro"
+import ViewIcon from "../svg/ViewIcon.astro"
+import GitHub from "../svg/GitHub.astro"
+
+interface Props {
+	project: Ii18nProject
+}
+
+const { project } = Astro.props
+---
+
+<article class="project">
+	<div class="project_first">
+		<h1 class="project_title">{project.name}</h1>
+		<picture class="project_picture">
+			<img class="project_image" src={project.image} />
+		</picture>
+		<footer class="project_footer">
+			<Button type="Button" text={project.demo.text} title={project.demo.title}>
+				<ViewIcon />
+			</Button>
+			<Button type="Button" text={project.code.text} title={project.code.title} isSecondary>
+				<GitHub />
+			</Button>
+		</footer>
+	</div>
+	<div class="project_details">
+		<div class="project_type">
+			<TechTypeIcon className="project_type-icon" type={project.type} />
+			<span class="project_type-text">{project.type}</span>
+		</div>
+		<p class="project_description">{project.description}</p>
+		<div class="project_technologies">
+			{
+				project.technologies.map((tech, index) => (
+					<div class="project_technology">
+						<img class="project_technology-image" src={`/icons/${tech}-logo.svg`} />
+						<span class="project_technology-text">
+							{project.technologies_names[index]}
+						</span>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</article>
+<style>
+	.project {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(13.5em, 1fr));
+		flex-direction: row;
+		gap: 1em;
+		width: 100%;
+		max-width: 30em;
+		padding: 0.5em;
+		background: radial-gradient(#344461, #222c3e);
+		border-radius: var(--borderRadius);
+		border: 1px dashed #c1d8eb20;
+		pointer-events: all;
+		box-shadow:
+			5px 5px 15px 1px #101115dd,
+			-7px -7px 15px #2e303a00;
+
+		&:hover .project_image {
+			transform: scale(1.13);
+		}
+
+		view-timeline-axis: block;
+		animation-fill-mode: both;
+		&:nth-child(2n + 1) {
+			view-timeline-name: --cardProjectLeft;
+			animation-timeline: --cardProjectLeft;
+			animation-name: showCardProjectLeft;
+			animation-range: entry 5% cover 25%;
+		}
+
+		&:nth-child(2n) {
+			view-timeline-name: --cardProject;
+			animation-timeline: --cardProject;
+			animation-name: showCardProject;
+			animation-range: entry 5% cover 25%;
+		}
+	}
+
+	@keyframes showCardProject {
+		from {
+			opacity: 0;
+			transform: translateX(50%);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes showCardProjectLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-50%);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	.project_first {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0 1em 0 0;
+		border-right: 1px dashed var(--borderColor);
+
+		@media (width < 632px) {
+			border: none;
+			padding: 0;
+		}
+	}
+
+	.project_title {
+		color: var(--primaryColor);
+	}
+
+	.project_type {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		align-self: flex-end;
+		width: max-content;
+		column-gap: 0.25em;
+
+		.project_type-icon {
+			color: #d9e0ee75;
+		}
+
+		.project_type-text {
+			color: #d9e0ee75;
+			text-transform: capitalize;
+			font-weight: 600;
+			font-size: 0.75em;
+		}
+	}
+
+	.project_picture {
+		display: flex;
+		border-radius: var(--borderRadius);
+		border: 2px solid var(--primaryColor);
+		width: 100%;
+		height: max-content;
+		margin: 0.5em 0;
+		overflow: hidden;
+		box-shadow:
+			3px 2px 13px 1px #10111575,
+			-7px -7px 15px #2e303a00;
+	}
+
+	.project_image {
+		width: 100%;
+		height: 100%;
+		transition: all 0.4s ease-in-out;
+	}
+
+	.project_details {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		row-gap: 0.5em;
+	}
+
+	.project_description {
+		font-size: 0.7em;
+		color: var(--primaryColor);
+		font-weight: 400;
+	}
+
+	.project_technologies {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 0.5em;
+	}
+
+	.project_technology {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 0.25em;
+		width: max-content;
+		padding: 0.25em 0.5em;
+		border-radius: 0 0.25em 0 0.25em;
+		background-color: #d9e0ee;
+		background: linear-gradient(-20deg, #b4bdcf, #ffffff, #b4bdcf);
+		border: 1px solid #dae1d600;
+		background-size: 150%;
+		box-shadow:
+			3px 3px 10px 1px #10111570,
+			0px 0px 10px #70707000 inset;
+
+		.project_technology-image {
+			width: 1.15em;
+			height: 1.15em;
+		}
+
+		.project_technology-text {
+			font-size: 0.6em;
+			font-weight: 700;
+			color: var(--backgroundColor);
+		}
+	}
+
+	.project_footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0.5em 0 0 0;
+		width: 100%;
+	}
+</style>

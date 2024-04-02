@@ -1,3 +1,360 @@
 {
-    "SEO_Description": "Explore my software development portfolio, where I showcase outstanding projects in JavaScript, TypeScript and C#. Contact me to discuss your software development needs."
+    "SEO_Description": "Explore my software development portfolio, where I showcase outstanding projects in JavaScript, TypeScript and C#. Contact me to discuss your software development needs.",
+    "navigationMenu": {
+        "home": {
+            "text": "Home",
+            "title": "Go to Home section"
+        },
+        "works": {
+            "text": "Works",
+            "title": "Go to Works section"
+        },
+        "projects": {
+            "text": "Projects",
+            "title": "Go to Projects section"
+        },
+        "contact": {
+            "text": "Contact",
+            "title": "Go to Contact section"
+        },
+        "experience": {
+            "text": "Experience",
+            "title": "Go to Experience section"
+        }
+    },
+    "socialMedia": {
+        "github": "Go to my project repository",
+        "linkedin": "Go to my LinkedIn profile",
+        "email": {
+            "title": "Send or copy my email",
+            "copy": {
+                "title": "Copy mail",
+                "text": "Copy"
+            },
+            "send": {
+                "title": "Send mail",
+                "text": "Send"
+            }
+        },
+        "resume": {
+            "title": "Download my Resume",
+            "text": "Download CV"
+        }
+    },
+    "homeSection": {
+        "position": "Software Developer"
+    },
+    "worksSection": {
+        "title": "Projects",
+        "works": [
+            {
+                "name": "Business Manager",
+                "description": [
+                    "Web application that enabled a modernization of business processes by replacing the use of Excel,",
+                    "It features inventory management, with a system of requisitions and purchase orders with customizable roles and authorizations, allowing for easy authorization and viewing from anywhere.",
+                    "Significantly improving efficiency and transparency in the company's procurement processes."
+                ],
+                "type": "web",
+                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "technologies": [
+                    "next",
+                    "react",
+                    "typescript",
+                    "sass",
+                    "mysql"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "React",
+                    "TypeScript",
+                    "SASS",
+                    "MySQL"
+                ],
+                "demo": {
+                    "text": "Demo",
+                    "title": "Access to the demo project"
+                },
+                "code": {
+                    "text": "Code",
+                    "title": ""
+                }
+            },
+            {
+                "name": "Business Manager",
+                "description": [
+                    "Web application that enabled a modernization of business processes by replacing the use of Excel,",
+                    "It features inventory management, with a system of requisitions and purchase orders with customizable roles and authorizations, allowing for easy authorization and viewing from anywhere.",
+                    "Significantly improving efficiency and transparency in the company's procurement processes."
+                ],
+                "type": "web",
+                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "technologies": [
+                    "next",
+                    "react",
+                    "typescript",
+                    "sass",
+                    "mysql"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "React",
+                    "TypeScript",
+                    "SASS",
+                    "MySQL"
+                ],
+                "demo": {
+                    "text": "Demo",
+                    "title": "Access to the demo project"
+                },
+                "code": {
+                    "text": "Code",
+                    "title": ""
+                }
+            }
+        ]
+    },
+    "projectsSection": {
+        "title": "Projects",
+        "projects": [
+            {
+                "name": "Business Manager",
+                "description": [
+                    "Web application that enabled a modernization of business processes by replacing the use of Excel,",
+                    "It features inventory management, with a system of requisitions and purchase orders with customizable roles and authorizations, allowing for easy authorization and viewing from anywhere.",
+                    "Significantly improving efficiency and transparency in the company's procurement processes."
+                ],
+                "type": "web",
+                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "technologies": [
+                    "next",
+                    "react",
+                    "typescript",
+                    "sass",
+                    "mysql"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "React",
+                    "TypeScript",
+                    "SASS",
+                    "MySQL"
+                ],
+                "demo": {
+                    "text": "Demo",
+                    "title": "Access to the demo project"
+                },
+                "code": {
+                    "text": "Code",
+                    "title": ""
+                }
+            },
+            {
+                "name": "Business Manager",
+                "description": [
+                    "Web application that enabled a modernization of business processes by replacing the use of Excel,",
+                    "It features inventory management, with a system of requisitions and purchase orders with customizable roles and authorizations, allowing for easy authorization and viewing from anywhere.",
+                    "Significantly improving efficiency and transparency in the company's procurement processes."
+                ],
+                "type": "web",
+                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "technologies": [
+                    "next",
+                    "react",
+                    "typescript",
+                    "sass",
+                    "mysql"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "React",
+                    "TypeScript",
+                    "SASS",
+                    "MySQL"
+                ],
+                "demo": {
+                    "text": "Demo",
+                    "title": "Access to the demo project"
+                },
+                "code": {
+                    "text": "Code",
+                    "title": ""
+                }
+            }
+        ]
+    },
+    "experienceSection": [
+        {
+            "id": 0,
+            "age_start": 2021,
+            "age_end": 2024,
+            "name": "Software Developer",
+            "company": "Freelance",
+            "text": "In my career as an independent developer, I have carried out projects to streamline the processes of companies, understanding their needs and developing customized software",
+            "position": "LEFT",
+            "technologies": [
+                "javascript",
+                "typescript",
+                "react",
+                "next",
+                "csharp",
+                "netcore",
+                "html",
+                "css",
+                "sql",
+                "mysql",
+                "node",
+                "express"
+            ],
+            "name_technologies": [
+                "JavaScript",
+                "TypeScript",
+                "React",
+                "Next",
+                "CSharp",
+                "NetCore",
+                "HTML",
+                "CSS",
+                "SQL",
+                "MySQL",
+                "Node",
+                "Express"
+            ],
+            "softskills": [
+                "Problem Solving",
+                "Creativity",
+                "Analytical Thinking",
+                "Self-learning",
+                "Continuous Learning",
+                "Time Management",
+                "Negotiation"
+            ]
+        },
+        {
+            "id": 2,
+            "age_start": 2018,
+            "age_end": 2021,
+            "name": "Automation Development and Functional Test Engineer",
+            "company": "Vectralis",
+            "text": "I developed and participated in the integration of functional teams and automation for electrical testing. My focus was on collaborating in the implementation and optimization of test systems that ensured the functionality and performance of electronic products. I participated in key projects where my work contributed to the creation of technical solutions that enabled accurate and reliable testing in the electrical and automotive industries.",
+            "position": "RIGHT",
+            "technologies": [
+                "labview",
+                "teststand",
+                "cvi",
+                "c",
+                "csharp",
+                "netcore",
+                "mysql",
+                "altium",
+                "eplan"
+            ],
+            "name_technologies": [
+                "LabVIEW",
+                "Teststand",
+                "CVI",
+                "C",
+                "CSharp",
+                "NetCore",
+                "MySQL",
+                "Altium",
+                "EPLAN"
+            ],
+            "softskills": [
+                "Problem Solving",
+                "Teamwork",
+                "Self-learning",
+                "Analytical Thinking",
+                "Adaptability",
+                "Continuous Learning"
+            ]
+        },
+        {
+            "id": 3,
+            "age_start": 2016,
+            "age_end": 2018,
+            "name": "Functional Testing Development Engineer",
+            "company": "Vectralis",
+            "text": "My main responsibility was to ensure the proper functioning of the electrical and electronic aspects of functional equipment. This involved detailed design of electrical schematics and troubleshooting, as well as the creation of PCBs (Printed Circuit Boards).",
+            "position": "LEFT",
+            "technologies": [
+                "altium",
+                "eplan",
+                "electronic",
+                "schematic"
+            ],
+            "name_technologies": [
+                "Altium",
+                "EPLAN",
+                "Electronics",
+                "Reading Electronic and Electrical Schematics"
+            ],
+            "softskills": [
+                "Problem Solving",
+                "Continuous Learning",
+                "Teamwork"
+            ]
+        },
+        {
+            "id": 4,
+            "age_start": 2013,
+            "age_end": 2016,
+            "name": "Functional Testing Technician",
+            "company": "Vectralis",
+            "text": "Responsible for the routing and wiring of electrical and electronic components, including the wiring of control panels. Also, mechanical assembly of test and automation equipment.",
+            "position": "RIGHT",
+            "technologies": [
+                "electronic",
+                "schematic",
+                "assembly"
+            ],
+            "name_technologies": [
+                "Electronics",
+                "Mechanical Assembly",
+                "Electrical Wiring and Connection",
+                "Use of Mechanical Tools",
+                "Soldering"
+            ],
+            "softskills": [
+                "Teamwork",
+                "Problem Solving",
+                "Continuous Learning"
+            ]
+        }
+    ],
+    "contactSection": {
+        "title": "Get in touch",
+        "message": [
+            "Whether you're interested in working together or just want to get more information, feel free to reach out.",
+            "Looking forward to hearing from you soon!"
+        ],
+        "form": {
+            "name": {
+                "label": "Name",
+                "error": "Please enter your name"
+            },
+            "email": {
+                "label": "Email",
+                "error": "Invalid email format"
+            },
+            "message": {
+                "label": "Message",
+                "error": "Please write a message"
+            },
+            "response": {
+                "success": [
+                    "Thank you for your message!",
+                    "Your email has been sent successfully.",
+                    "I will respond to you as soon as possible."
+                ],
+                "error": [
+                    "Sorry, an error occurred while sending your message. Please try again later."
+                ]
+            },
+            "button": {
+                "text": "Send",
+                "title": "Send form"
+            }
+        },
+        "copyMessage": "Copied to clipboard"
+    }
 }

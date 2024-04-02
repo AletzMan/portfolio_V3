@@ -1,0 +1,64 @@
+---
+import { Button } from "./Button/Button"
+import GitHub from "./svg/GitHub.astro"
+import LinkedIn from "./svg/LinkedIn.astro"
+import Download from "./svg/Download.astro"
+import ButtonMail from "./Home/ButtonMail.astro"
+
+import { getI18n } from "../i18n"
+const { currentLocale } = Astro
+const i18n = getI18n({ currentLocale })
+
+interface Props {
+	hasButtonCV?: boolean
+	hasButtonMail?: boolean
+	isSecondary?: boolean
+}
+const { hasButtonCV, hasButtonMail, isSecondary } = Astro.props
+---
+
+<div class="socialButtons">
+	<Button
+		type="Link"
+		text="GitHub"
+		href="https://github.com/AletzMan"
+		title={i18n.socialMedia.github}
+		isSecondary={!isSecondary}
+	>
+		<GitHub />
+	</Button>
+	<Button
+		type="Link"
+		text="LinkedIn"
+		href="https://www.linkedin.com/in/alejandro-garcia-alonso-596788b8/"
+		title={i18n.socialMedia.linkedin}
+		isSecondary={!isSecondary}
+	>
+		<LinkedIn />
+	</Button>
+	{hasButtonMail && <ButtonMail isSecondary={!isSecondary} />}
+	{
+		hasButtonCV && (
+			<Button
+				id="buttonCV"
+				type="Button"
+				text={i18n.socialMedia.resume.text}
+				title={i18n.socialMedia.resume.title}
+			>
+				<Download />
+			</Button>
+		)
+	}
+</div>
+<style>
+	.socialButtons {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-flow: row wrap;
+		gap: 1em;
+
+		/*background-color: red;*/
+	}
+</style>

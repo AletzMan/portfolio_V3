@@ -2,14 +2,24 @@
 import ButtonLanguage from "./ButtonLanguage.astro"
 import ThemeIcon from "./ThemeIcon.astro"
 import NavigationMenu from "./NavigationMenu/NavigationMenu"
+
+import { getI18n } from "../i18n/index"
+import Logo from "./Logo.astro"
+const { currentLocale } = Astro
+const i18n = getI18n({ currentLocale })
 ---
 
 <header class="header">
-	<NavigationMenu />
+	<!-- <Logo />-->
+	<NavigationMenu
+		props={i18n.navigationMenu}
+		currentLocale={currentLocale === "es" ? "" : "en"}
+		client:load
+	/>
 	<div class="header_options">
 		<!-- -->
 		<ButtonLanguage />
-		<ThemeIcon />
+		<!--<ThemeIcon /> -->
 	</div>
 </header>
 <style>

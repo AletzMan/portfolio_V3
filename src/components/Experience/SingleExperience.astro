@@ -1,0 +1,301 @@
+---
+import type { Ii18nExperience } from "../../Types/i18n"
+
+interface Props {
+	experienceDescription: Ii18nExperience
+}
+const { experienceDescription } = Astro.props
+---
+
+<article
+	class={`${experienceDescription.position === "LEFT" ? "experience experience_left" : "experience experience_right"}`}
+	style={`grid-row: ${experienceDescription.id}/${experienceDescription.id} ;`}
+>
+	<header
+		class={`experience_header ${experienceDescription.position === "LEFT" ? "experience_header-left" : "experience_header-right"}`}
+	>
+		<h1 class="experience_title">{experienceDescription.name}</h1>
+		<span class="experience_company">{experienceDescription.company}</span>
+	</header>
+	<p class="experience_description">
+		{experienceDescription.text}
+	</p>
+	<div
+		class={`timeline_point ${experienceDescription.position === "LEFT" ? "timeline_point-left" : "timeline_point-right"}`}
+	>
+	</div>
+	<div
+		class=`experience_date  ${experienceDescription.position === "LEFT" ?  "experience_date-left" : "experience_date-right"}`
+	>
+		<span class="experience_date-start">{experienceDescription.age_start}</span> -
+		<span class="experience_date-end">{experienceDescription.age_end}</span>
+	</div>
+	<footer class="experience_footer">
+		<h2 class="experience_footer-title">Soft Skills</h2>
+		<article class="experience_skills">
+			{
+				experienceDescription.softskills.map((soft) => (
+					<span class="experience_softskill">{soft}</span>
+				))
+			}
+		</article>
+		<h2 class="experience_footer-title">Hard Skills</h2>
+		<article class="experience_skills">
+			{
+				experienceDescription.name_technologies.map((tech, index) => (
+					<span class="experience_hardskill">{tech}</span>
+				))
+			}
+		</article>
+	</footer>
+</article>
+
+<style>
+	.experience {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 98%;
+		min-width: 17em;
+		padding: 0.5em;
+		border: 1px dashed #cbe66380;
+		background: radial-gradient(#344461, #222c3e);
+
+		&:first-child {
+			margin: 1.5em 0 0 0;
+		}
+
+		&:nth-child(4) {
+			margin: 0 0 1.5em 0;
+		}
+	}
+	.experience_left {
+		border-radius: 0.5em 0 0 0.5em;
+		grid-column: 1 / 2;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0.1em;
+			right: -0.8em;
+			border-bottom: 0.5em solid transparent;
+			border-right: 0.5em solid var(--secondaryColor);
+			border-left: 0.5em solid transparent;
+			transform: rotate(45deg);
+		}
+	}
+
+	.experience_right {
+		border-radius: 0 0.5em 0.5em 0;
+		justify-self: end;
+		grid-column: 3 / 4;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0.1em;
+			left: -0.8em;
+			border-bottom: 0.5em solid transparent;
+			border-right: 0.5em solid transparent;
+			border-left: 0.5em solid var(--secondaryColor);
+			transform: rotate(-45deg);
+		}
+	}
+
+	.experience_header {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: calc(100% - 5.5em);
+
+		&.experience_header-right {
+			align-self: flex-end;
+			& .experience_title {
+				text-align: right;
+				border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+			}
+
+			& .experience_company {
+				align-self: flex-end;
+			}
+		}
+	}
+
+	.experience_title {
+		font-weight: 500;
+		font-size: 0.8em;
+		text-wrap: balance;
+		border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+		color: var(--primaryColor);
+		background-color: var(--borderColor);
+		border-bottom: 1px solid var(--secondaryColor);
+		padding: 0.1em 0.5em;
+		/*color: var(--textColor);*/
+	}
+
+	.experience_company {
+		font-size: 0.75em;
+		color: var(--primaryColor);
+		width: max-content;
+		padding: 0.15em 0.5em;
+		border-top: none;
+		font-weight: 600;
+		color: var(--backgroundColor);
+		border: 1px solid var(--secondaryColor);
+		background: linear-gradient(
+			-30deg,
+			var(--secondaryColor) 20%,
+			#dafc52,
+			var(--secondaryColor) 80%
+		);
+		border-radius: 0 0 var(--borderRadius) var(--borderRadius);
+		opacity: 0.8;
+	}
+
+	.experience_description {
+		font-size: 0.65em;
+		font-weight: 300;
+		padding: 0.5em 0;
+		text-wrap: pretty;
+		color: var(--primaryColor);
+	}
+
+	.experience_date {
+		position: absolute;
+		top: -0.5em;
+		width: 8em;
+		padding: 0.35em 1em;
+		font-size: 0.7em;
+		font-weight: 600;
+		color: var(--backgroundColor);
+		background: linear-gradient(
+			-45deg,
+			var(--secondaryColor) 30%,
+			#d5fb3d,
+			var(--secondaryColor) 70%
+		);
+		border: 1px solid var(--borderColor);
+
+		@media (width < 1000px) {
+			display: none;
+		}
+	}
+
+	.experience_date-left {
+		right: -0.75em;
+		border-radius: 0 var(--borderRadius) var(--borderRadius) 0.35em;
+	}
+
+	.experience_date-right {
+		left: -0.75em;
+		border-radius: 0.35em 0 0 0.35em;
+	}
+
+	.timeline_point {
+		position: absolute;
+		width: 0.75em;
+		height: 0.75em;
+		border-radius: 2em;
+		background: radial-gradient(#e2f76a 0%, var(--secondaryColor) 50%);
+		z-index: 1;
+
+		@media (width < 1000px) {
+			display: none;
+		}
+
+		&::after {
+			position: absolute;
+			top: -0.3em;
+			left: -0.3em;
+			content: "";
+			width: 1.25em;
+			height: 1.25em;
+			border-radius: 2em;
+			border: 1px solid #c2d07699;
+			animation: shadowAnimate 1.5s ease-in-out 1s infinite;
+		}
+
+		&::before {
+			position: absolute;
+			top: -0.3em;
+			left: -0.3em;
+			content: "";
+			width: 1.25em;
+			height: 1.25em;
+			border-radius: 2em;
+			border: 1px solid #c2d07699;
+			animation: shadowAnimate 1.5s ease-in-out infinite;
+		}
+	}
+
+	.timeline_point-left {
+		top: 0.15em;
+		right: -2.05em;
+
+		@media (width < 1250px) {
+			right: -29.75%;
+		}
+	}
+
+	.timeline_point-right {
+		top: 0.15em;
+		left: -2.05em;
+
+		@media (width < 1250px) {
+			left: -29.75%;
+		}
+	}
+
+	@keyframes shadowAnimate {
+		from {
+			transform: scale(0.4);
+			opacity: 1;
+		}
+		to {
+			transform: scale(1.75);
+			opacity: 0;
+		}
+	}
+
+	.experience_footer {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25em;
+	}
+
+	.experience_footer-title {
+		font-size: 0.7em;
+		font-weight: 500;
+		color: var(--primaryColor);
+	}
+
+	.experience_skills {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 0.25em;
+	}
+
+	.experience_softskill {
+		font-size: 0.6em;
+		padding: 0.15em 0.5em;
+		max-width: max-content;
+		border-radius: 0.5em;
+		font-weight: 600;
+		color: black;
+		border: 1px solid #83b5d133;
+		background-color: #aedcf7;
+		background: linear-gradient(-15deg, #a3d6f3 30%, #bbe4fb, #a3d6f3 70%);
+	}
+
+	.experience_hardskill {
+		font-size: 0.6em;
+		padding: 0.15em 0.5em;
+		border: 1px solid #ef946c33;
+		max-width: max-content;
+		border-radius: 0.5em;
+		font-weight: 600;
+		color: black;
+		background: #ef946c45;
+		background: linear-gradient(-15deg, #b6ffa0 30%, #ccf9be, #b6ffa0 70%);
+	}
+</style>

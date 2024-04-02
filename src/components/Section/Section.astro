@@ -1,17 +1,29 @@
 ---
 interface Props {
 	title: string
+	class?: string
+	id?: string
+	hiddenTitle?: boolean
 }
-const { title } = Astro.props
+const { title, class: className, id, hiddenTitle } = Astro.props
 import TabIcon from "../svg/TabIcon.astro"
 import AddIcon from "../svg/AddIcon.astro"
 import ArrowUpIcon from "../svg/ArrowUpIcon.astro"
 import PanelIcon from "../svg/PanelIcon.astro"
+import ReloadIcon from "../svg/ReloadIcon.astro"
 import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 ---
 
-<section class="section">
-	<header class="section_header">
+<section class={`section ${className}`}>
+	{
+		!hiddenTitle && (
+			<h1 class="works_title" data-title={title}>
+				{title}
+			</h1>
+		)
+	}
+	<span class="separator" id={id}></span>
+	<!--<header class="section_header">
 		<div class="section_buttons">
 			<div class="section_circle"></div>
 			<div class="section_circle"></div>
@@ -22,32 +34,84 @@ import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 				<ArrowLeftIcon class="section_icon section_icon-arrowRight" />
 			</div>
 		</div>
-		<!-- <div class="section_tab">{title}</div>-->
-		<div class="section_input">{title}</div>
+		<div class="section_input">
+			<span class="section_input-text" data-title={title}>{title}</span>
+			<ReloadIcon class="section_reload" />
+		</div>
 		<div class="section_options">
 			<ArrowUpIcon class="section_icon" />
 			<AddIcon class="section_icon" />
 			<TabIcon class="section_icon" />
 		</div>
-	</header>
+	</header> -->
 	<slot />
-	<footer class="section_footer"></footer>
+	<!--<footer class="section_footer"></footer> -->
 </section>
 
 <style>
 	.section {
 		position: relative;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		min-height: calc(100svh - 6.5em);
 		margin: 5em 0 0 0;
+		padding: 1.75em 0 1em 0;
 		color: currentColor;
 		border-radius: var(--borderRadius);
-		backdrop-filter: blur(4px);
-		border: 1px solid var(--borderColor);
+		/*backdrop-filter: blur(4px);*/
+		/*border: 4px double var(--borderColor);*/
+		/*background: url("/graph-paper.svg");
+		background-repeat: repeat;
+		background-size: 5%;*/
 		z-index: 1;
-		overflow: hidden;
+		pointer-events: none;
+		/*overflow-y: hidden;*/
+		/*view-timeline-name: --image;
+		view-timeline-axis: block;
+		animation-timeline: --image;
+		animation-name: show;
+		animation-range: entry 5% cover 50%;
+		animation-fill-mode: both;*/
+	}
+
+	.works_title {
+		position: relative;
+		font-size: 3.5vw;
+		color: var(--primaryColor);
+
+		&::after {
+			position: absolute;
+			left: -150%;
+			top: -150%;
+			content: attr(data-title);
+			font-size: 400%;
+			color: #ffffff07;
+		}
+	}
+
+	/*@keyframes show {
+		from {
+			opacity: 0;
+			scale: 75%;
+		}
+		to {
+			opacity: 1;
+			scale: 100%;
+		}
+	}*/
+
+	.separator {
+		position: absolute;
+		top: -5em;
+		background-color: transparent;
+		height: 5px;
+		width: 5px;
+	}
+
+	.section_contact {
+		margin: 5em 0 1.5em 0;
 	}
 
 	.section_header {
@@ -69,6 +133,11 @@ import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 		position: absolute;
 		right: 0;
 		padding: 0 0.5em 0 0;
+
+		@media (width < 768px) {
+			column-gap: 0em;
+			padding: 0 0.25em 0 0;
+		}
 	}
 
 	.section_icon {
@@ -85,7 +154,7 @@ import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		column-gap: 0.25em;
+		column-gap: 0.35em;
 		position: absolute;
 		left: 0;
 		padding: 0 0 0 0.75em;
@@ -98,15 +167,20 @@ import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 			column-gap: 0.5em;
 			height: 100%;
 			padding: 0 0 0 1.5em;
+
+			@media (width < 768px) {
+				display: none;
+			}
 		}
 	}
 
 	.section_circle {
-		width: 0.6em;
-		height: 0.6em;
+		width: 0.5em;
+		height: 0.5em;
 		border-radius: 2em;
 		border: 1px solid var(--borderColor);
 		background-color: var(--borderColor);
+		opacity: 0.7;
 
 		&:nth-child(1) {
 			background-color: red;
@@ -119,48 +193,8 @@ import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 		}
 	}
 
-	.section_tab {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: absolute;
-		left: 5em;
-		bottom: 0;
-		width: 8em;
-		height: 1.4em;
-		/*background-color: var(--tabColor);*/
-
-		&::after,
-		&::before {
-			content: "";
-			position: absolute;
-			top: -1px;
-			height: 100%;
-			width: 0.85em;
-			border-top: 1px solid var(--borderColor);
-			/*transition: all 250ms ease;*/
-		}
-
-		&::after {
-			border-radius: 0.25em 0 0 0;
-			left: -0.5em;
-			transform: skew(-25deg, 0deg);
-			box-shadow:
-				rgba(0, 0, 0, 0.1) -3px 2px 5px,
-				inset rgba(255, 255, 255, 0.09) 1px 0;
-		}
-
-		&::before {
-			border-radius: 0 0.25em 0 0;
-			right: -0.5em;
-			transform: skew(25deg, 0deg);
-			box-shadow:
-				rgba(0, 0, 0, 0.1) 3px 2px 5px,
-				inset rgba(255, 255, 255, 0.09) -1px 0;
-		}
-	}
-
 	.section_input {
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -174,6 +208,14 @@ import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 		border: 1px solid var(--borderColor);
 		background-color: var(--borderColor);
 		box-shadow: inset rgba(89, 89, 89, 0.2) 0 0 2px 1px;
+		overflow: hidden;
+
+		& .section_reload {
+			position: absolute;
+			right: 0.5em;
+			opacity: 0.4;
+			transform: rotate(-60deg);
+		}
 	}
 
 	.section_footer {

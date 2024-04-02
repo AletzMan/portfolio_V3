@@ -5,6 +5,10 @@
     column-gap: 1.5em;
     width: 100%;
 
+    @media (width < 768px) {
+        display: none;
+    }
+
     &_link {
         position: relative;
         text-decoration: none;
@@ -12,38 +16,32 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: currentColor;
         width: 2.5em;
         height: 2.5em;
         border-radius: var(--borderRadius);
         padding: 0em 1em;
-        font-weight: 600;
-        font-size: 0.85em;
+        transform: scale(0.9) translateY(-2px);
         transform-origin: 50% 100%;
-        /*background-color: var(--borderColor);*/
+        color: var(--primaryColor);
         background: radial-gradient(transparent 40%, var(--borderColor) 80%);
         transition: all 0.25s ease-in-out;
 
-        /*
-        &:after {
-            position: absolute;
-            bottom: -35px;
-            left: 0;
-            content: attr(data-desc);
-            width: 100%;
-            height: 1.5em;
-            text-align: center;
-            background-color: var(--borderColor);
-            border-radius: var(--borderRadius);
-            z-index: -1;
-            animation: show auto linear;
-            animation-timeline: scroll(root);
-        }*/
 
         &:hover {
             color: var(--secondaryColor);
-            transform: scale(1.25);
+            transform: scale(1.2) translateY(-5px);
             margin: 0 0.25em 0 0.25em;
+
+            & .nav_name {
+                display: block;
+            }
+        }
+
+        &Active:not(&:hover) {
+            color: var(--secondaryColor);
+            transform: scale(1.2) translateY(-5px);
+            margin: 0 0.25em 0 0.25em;
+            pointer-events: none;
 
             & .nav_name {
                 display: block;
@@ -54,27 +52,30 @@
     &_name {
         display: none;
         position: absolute;
-        bottom: -2.3em;
-        width: 4.5em;
-        font-size: 0.85em;
+        bottom: -2em;
+        width: 7em;
         text-align: center;
+        font-size: 0.55em;
+        font-weight: 600;
+        color: var(--backgroundColor);
         border-radius: var(--borderRadius);
-        /*background-color: var(--borderColor);*/
-        /*border: 1px solid var(--borderColor);*/
-        transition: all 0.15s ease-in-out;
-        color: var(--secondaryColor);
+        background: linear-gradient(-10deg,
+                var(--secondaryColor) 30%,
+                #d5fb3d,
+                var(--secondaryColor) 70%);
         z-index: 2;
+        transition: all 0.15s ease-in-out;
 
         &::after {
             position: absolute;
-            top: -0.4em;
-            left: calc(50% - 0.5em);
+            top: -0.6em;
+            left: calc(50% - 0.75em);
             content: "";
             width: 0em;
             height: 0em;
-            border-bottom: 0.5em solid var(--buttonColor);
-            border-left: 0.5em solid transparent;
-            border-right: 0.5em solid transparent;
+            border-bottom: 0.75em solid var(--secondaryColor);
+            border-left: 0.75em solid transparent;
+            border-right: 0.75em solid transparent;
         }
     }
 

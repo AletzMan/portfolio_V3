@@ -2,6 +2,10 @@
 import Layout from "../layouts/Layout.astro"
 import Header from "../components/Header.astro"
 import Home from "../components/Home/Home.astro"
+import Experience from "../components/Experience/Experience.astro"
+import Works from "../components/Works/Works.astro"
+import Projects from "../components/Projects/Projects.astro"
+import Contact from "../components/Contact/Contact.astro"
 
 import { getI18n } from "../i18n/index"
 const { currentLocale } = Astro
@@ -12,6 +16,10 @@ const i18n = getI18n({ currentLocale })
 	<main>
 		<Header />
 		<Home />
+		<Works />
+		<Projects />
+		<Experience />
+		<Contact />
 	</main>
 </Layout>
 

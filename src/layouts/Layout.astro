@@ -1,5 +1,6 @@
 ---
 import "@fontsource/jost"
+import "@fontsource-variable/montserrat"
 import { BouncingBall } from "../components/BouncingBalls/Ballon"
 import Background from "../components/Background.astro"
 interface Props {
@@ -20,8 +21,8 @@ const { title, description } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div id="containerBalls"></div>
+	<body id="containerBalls">
+		<div id="containerBalls2"></div>
 		<BouncingBall client:load />
 		<slot />
 		<Background />
@@ -29,29 +30,56 @@ const { title, description } = Astro.props
 </html>
 <style is:global>
 	:root {
-		--backgroundColor: #22232c;
-		--primaryColor: #d8e1df;
-		--secondaryColor: #ca9d17;
-		--tertiaryColor: #cf4536;
-		--textColor: #faf9fa;
+		/*--backgroundColor: #22232c;
+		--primaryColor: #f7fff6;*/
+		/*--secondaryColor: #1ea896;*/
+		/*--secondaryColor: #f6b17a;
+		--tertiaryColor: #ff715b;
+		--titleColor: #5fad41;
+		--textColor: #e7ecef;
 		--buttonColor: #1a1b22;
 		--tabColor: #47474b;
 		--tabColorLight: #a0a7a6;
 		--borderColor: #6f6f6f55;
 		--borderRadius: 0.25rem;
-		--maxWidth: 1200px;
+		--maxWidth: 1350px;*/
+
+		--backgroundColor: #161c28;
+		--primaryColor: #f6fcff;
+		/*--secondaryColor: #1ea896;*/
+		/*--secondaryColor: rgb(65, 154, 183);*/
+		--secondaryColor: #bbe516;
+		--tertiaryColor: #048ba8;
+		--titleColor: #5fad41;
+		/*--textColor: #d6ddc7;*/
+		--textColor: #213445;
+		--buttonColor: #1a1b22;
+		--tabColor: #47474b;
+		--tabColorLight: #a0a7a6;
+		--borderColor: #6f6f6f55;
+		--borderRadius: 0.25rem;
+		--maxWidth: 1350px;
 	}
+
 	* {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
+		scroll-behavior: smooth;
 	}
+
 	html {
-		font-family: "Jost", system-ui, sans-serif;
+		font-family: "Montserrat Variable", system-ui, sans-serif;
 		color: var(--backgroundColor);
-		background: var(--primaryColor);
+		/*background: #a0c49d;*/
+		/*background: #93c6e7;*/
+		/*background: #8ec3b0;*/
+		/*background: #99a799;*/
+		/*background: #7c9473;*/
+		background: #99cda9;
 		background-size: 224px;
 	}
+
 	code {
 		font-family:
 			Menlo,
@@ -63,59 +91,30 @@ const { title, description } = Astro.props
 			Courier New,
 			monospace;
 	}
-	html.dark {
-		background: var(--backgroundColor);
-	}
 
-	.dark body main .header nav a {
-		color: var(--primaryColor);
-		font-weight: 600;
+	body {
+		background: radial-gradient(#161c28 20%, #0c0f16);
+		scroll-behavior: smooth;
+		overflow-x: hidden;
 
-		& .nav_name {
-			background-color: var(--buttonColor);
-			/*color: var(--secondaryColor);**/
+		&::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
 		}
-	}
 
-	body main .header nav a {
-		& .nav_name {
-			background-color: var(--buttonColor);
-			/*color: var(--primaryColor);*/
+		&::-webkit-scrollbar-thumb {
+			background-color: var(--secondaryColor);
 		}
-	}
-	.dark body main {
-		color: var(--primaryColor);
-	}
-	body main section {
-		background-color: #c6d3d199;
-		& header .section_tab {
-			border-top: 1px solid var(--borderColor);
-			&::after,
-			&::before {
-				border-top: 1px solid var(--borderColor);
-			}
-		}
-	}
-	.dark body main section {
-		background-color: #22232cbb;
 
-		& header .section_tab {
+		&::-webkit-scrollbar-track {
 			background-color: var(--tabColor);
-			border-top: 1px solid var(--borderColor);
-			&::after,
-			&::before {
-				background-color: var(--tabColor);
-			}
+		}
+
+		& .tag__move {
+			box-shadow: -10px -10px 20px 7px #faf9fa35 inset;
 		}
 	}
 
-	.dark body .lines .backgroundImage {
-		opacity: 0.1;
-	}
-
-	body .lines .backgroundImage {
-		opacity: 0.4;
-	}
 	.tag__move {
 		position: absolute;
 		font-size: 1rem;
@@ -126,10 +125,9 @@ const { title, description } = Astro.props
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 65%;
-		opacity: 0.25;
+		opacity: 0.35;
 		transition: opacity 0.3s ease-in-out;
 		color: var(--textColor);
-		box-shadow: -10px -10px 20px 7px #faf9fa55 inset;
 		z-index: 0;
 	}
 
@@ -138,12 +136,12 @@ const { title, description } = Astro.props
 		backdrop-filter: bright(150%);
 		cursor: grab;
 	}
+
 	#containerBalls {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
 		z-index: 0;
 	}
 </style>

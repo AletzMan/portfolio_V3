@@ -1,42 +1,43 @@
 ---
-import { Button } from "../Button/Button"
 import TechTypeIcon from "../TechTypeIcon.astro"
-import GitHub from "../svg/GitHub.astro"
-import LinkedIn from "../svg/LinkedIn.astro"
-import Download from "../svg/Download.astro"
-import ButtonMail from "./ButtonMail.astro"
+import SocialButtons from "../SocialButtons.astro"
 import Section from "../Section/Section.astro"
+
+import { getI18n } from "../../i18n/index"
+const { currentLocale } = Astro
+const i18n = getI18n({ currentLocale })
 ---
 
-<Section title="Inicio">
+<Section title={i18n.navigationMenu.home.text} id="home" hiddenTitle>
 	<article class="home_content">
-		<picture class="home_picture">
+		<div class="home_picture">
 			<img class="photoProfile" src="/profile-photo.webp" alt="Alejandro Garcia" />
-		</picture>
+			<div class="logosRotate">
+				<div class="logotech logoJS">
+					<img class="logo_image" src="/icons/javascript-logo.svg" />
+				</div>
+				<div class="logotech logoReact">
+					<img class="logo_image" src="/icons/react-logo.svg" />
+				</div>
+				<div class="logotech logoTS">
+					<img class="logo_image" src="/icons/typescript-logo.svg" />
+				</div>
+				<div class="logotech logoNext">
+					<img class="logo_image" src="/icons/next-logo.svg" />
+				</div>
+				<div class="logotech logoCS">
+					<img class="logo_image" src="/icons/csharp-logo.svg" />
+				</div>
+			</div>
+		</div>
 		<h1>Alejandro Garcia</h1>
-		<h2>Software Developer</h2>
+		<h2>{i18n.homeSection.position}</h2>
 		<div class="techs">
 			<TechTypeIcon type="web" />
 			<TechTypeIcon type="mobile" />
 			<TechTypeIcon type="desktop" />
 		</div>
-		<div class="socialButtons">
-			<Button type="Link" text="GitHub" href="https://github.com/AletzMan" isSecondary>
-				<GitHub />
-			</Button>
-			<Button
-				type="Link"
-				text="LinkedIn"
-				href="https://www.linkedin.com/in/alejandro-garcia-alonso-596788b8/"
-				isSecondary
-			>
-				<LinkedIn />
-			</Button>
-			<ButtonMail />
-			<Button id="buttonCV" type="Button" text="Descargar CV">
-				<Download />
-			</Button>
-		</div>
+		<SocialButtons hasButtonCV />
 	</article>
 </Section>
 <style>
@@ -48,6 +49,13 @@ import Section from "../Section/Section.astro"
 		text-align: center;
 		padding: 1rem;
 		box-sizing: border-box;
+		background-color: transparent;
+		pointer-events: all;
+		backdrop-filter: blur(1px);
+
+		@media (width < 698px) {
+			padding: 0.5em;
+		}
 	}
 
 	.home_content h1 {
@@ -55,6 +63,11 @@ import Section from "../Section/Section.astro"
 		padding: 0;
 		height: max-content;
 		margin: 0;
+		color: var(--primaryColor);
+
+		@media (width < 500px) {
+			font-size: 1.9rem;
+		}
 	}
 
 	.home_content h2 {
@@ -62,6 +75,10 @@ import Section from "../Section/Section.astro"
 		margin: 0;
 		font-size: 2rem;
 		color: var(--secondaryColor);
+
+		@media (width < 500px) {
+			font-size: 1.4rem;
+		}
 	}
 
 	.home_content p {
@@ -73,17 +90,21 @@ import Section from "../Section/Section.astro"
 		position: relative;
 		width: 200px;
 		height: 200px;
-		margin-top: 2rem;
+		margin: 1rem 0 2em 0;
 		padding: 0.25em;
 		border: 3px solid var(--secondaryColor);
 		background-color: var(--backgroundColor);
 		border-radius: 15em;
-		/*overflow: hidden;*/
+
+		@media (width < 500px) {
+			width: 160px;
+			height: 160px;
+		}
 
 		&::after {
 			position: absolute;
-			left: -0.5em;
-			top: -0.5em;
+			left: -5%;
+			top: -5%;
 			content: "";
 			width: 110%;
 			height: 110%;
@@ -91,24 +112,7 @@ import Section from "../Section/Section.astro"
 			background-color: #d2cdcd25;
 			z-index: -1;
 		}
-		/*view-timeline-name: --image;
-		view-timeline-axis: block;
-		animation-timeline: --image;
-		animation-name: show;
-		animation-range: entry 25% cover 50%;
-		animation-fill-mode: both;*/
 	}
-
-	/*@keyframes show {
-		from {
-			opacity: 0;
-			scale: 25%;
-		}
-		to {
-			opacity: 1;
-			scale: 100%;
-		}
-	}*/
 
 	.photoProfile {
 		width: 100%;
@@ -117,20 +121,127 @@ import Section from "../Section/Section.astro"
 		/*filter: sepia(1) blur(10px);*/
 	}
 
-	.socialButtons {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		column-gap: 1em;
-		/*background-color: red;*/
-	}
-
 	.techs {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		column-gap: 1em;
 		margin: 0 0 3em 0;
+
+		@media (width < 500px) {
+			margin: 0 0 2em 0;
+		}
+	}
+
+	.logosRotate {
+		position: absolute;
+		left: calc(50% - 130px);
+		top: calc(50% - 130px);
+		border-radius: 20em;
+		width: 260px;
+		height: 260px;
+		border: 1px solid #68646820;
+		background-color: #ebe1e901;
+		animation: rotateLogos 12s linear infinite;
+		z-index: 0;
+
+		@media (width < 500px) {
+			width: 190px;
+			height: 190px;
+			left: calc(50% - 95px);
+			top: calc(50% - 95px);
+		}
+	}
+
+	@keyframes rotateLogos {
+		0% {
+			transform: rotate(0);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	.logotech {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		width: 1.35em;
+		height: 1.35em;
+		border-radius: 20em;
+		transform: scale(1);
+		animation: rotateLogo 12s linear infinite;
+		box-shadow: -10px -10px 12px 7px #faf9fa30 inset;
+
+		&:hover {
+			border: 5px;
+
+			& :first-child {
+				transform: scale(4);
+				opacity: 0.8;
+			}
+		}
+
+		@media (width < 500px) {
+			width: 1.5em;
+			height: 1.5em;
+		}
+	}
+
+	@keyframes rotateLogo {
+		0% {
+			transform: rotate(360deg);
+		}
+		100% {
+			transform: rotate(0);
+		}
+	}
+
+	.logoJS {
+		left: 1.2em;
+		top: 1.2em;
+	}
+
+	.logoReact {
+		right: 1.2em;
+		top: 1.2em;
+	}
+
+	.logoTS {
+		right: -0.75em;
+		top: 46%;
+	}
+
+	.logoNext {
+		right: 1.2em;
+		bottom: 1.2em;
+	}
+
+	.logoCS {
+		left: 1.2em;
+		bottom: 1.2em;
+	}
+
+	.logo_image {
+		width: 1em;
+		height: 1em;
+		object-fit: cover;
+		opacity: 0.5;
+		transition: transform 0.3s ease-in-out;
+
+		@media (width < 500px) {
+			width: 1.5em;
+			height: 1.5em;
+		}
+	}
+
+	@keyframes moveLogo {
+		0% {
+			transform: scale(0.5);
+		}
+		100% {
+			transform: scale(1);
+		}
 	}
 </style>

@@ -1,3 +1,360 @@
 {
-    "SEO_Description": "Explora mi portfolio de desarrollo de software, donde muestro proyectos destacados en JavaScript, TypeScript y C#. Contáctame para discutir tus necesidades de desarrollo de software."
+    "SEO_Description": "Explora mi portfolio de desarrollo de software, donde muestro proyectos destacados en JavaScript, TypeScript y C#. Contáctame para discutir tus necesidades de desarrollo de software.",
+    "navigationMenu": {
+        "home": {
+            "text": "Inicio",
+            "title": "Ir a la sección de Inicio"
+        },
+        "works": {
+            "text": "Trabajos",
+            "title": "Ir a la sección de Trabajos"
+        },
+        "projects": {
+            "text": "Proyectos",
+            "title": "Ir a la sección de Proyectos"
+        },
+        "experience": {
+            "text": "Experiencia",
+            "title": "Ir a la sección de Experiencia"
+        },
+        "contact": {
+            "text": "Contacto",
+            "title": "Ir a la sección de Contacto"
+        }
+    },
+    "socialMedia": {
+        "github": "Ir a los repositorio de mis proyectos",
+        "linkedin": "Ir a mi perfil de LinkedIn",
+        "email": {
+            "title": "Enviar o copiar mi correo electrónico",
+            "copy": {
+                "title": "Copiar correo",
+                "text": "Copiar"
+            },
+            "send": {
+                "title": "Enviar correo",
+                "text": "Enviar"
+            }
+        },
+        "resume": {
+            "title": "Descargar mi curriculum",
+            "text": "Descargar CV"
+        }
+    },
+    "homeSection": {
+        "position": "Desarrollador de Software"
+    },
+    "worksSection": {
+        "title": "Proyectos",
+        "works": [
+            {
+                "name": "Gestor Empresarial",
+                "description": [
+                    "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel,",
+                    "Cuenta con gestión de inventarios, con un sistema de requisiciones y órdenes de compra con roles y autorizaciones personalizables, lo que permite una fácil autorización y visualización desde cualquier lugar.",
+                    "Mejorando significativamente la eficiencia y la transparencia en los procesos de adquisición de la empresa."
+                ],
+                "type": "web",
+                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "technologies": [
+                    "next",
+                    "react",
+                    "typescript",
+                    "sass",
+                    "mysql"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "React",
+                    "TypeScript",
+                    "SASS",
+                    "MySQL"
+                ],
+                "demo": {
+                    "text": "Ver demo",
+                    "title": "Accede a la demo del proyecto"
+                },
+                "code": {
+                    "text": "Codigo",
+                    "title": ""
+                }
+            },
+            {
+                "name": "Gestor Empresarial",
+                "description": [
+                    "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel,",
+                    "Cuenta con gestión de inventarios, con un sistema de requisiciones y órdenes de compra con roles y autorizaciones personalizables, lo que permite una fácil autorización y visualización desde cualquier lugar.",
+                    "Mejorando significativamente la eficiencia y la transparencia en los procesos de adquisición de la empresa."
+                ],
+                "type": "web",
+                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "technologies": [
+                    "next",
+                    "react",
+                    "typescript",
+                    "sass",
+                    "mysql"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "React",
+                    "TypeScript",
+                    "SASS",
+                    "MySQL"
+                ],
+                "demo": {
+                    "text": "Ver demo",
+                    "title": "Accede a la demo del proyecto"
+                },
+                "code": {
+                    "text": "Codigo",
+                    "title": ""
+                }
+            }
+        ]
+    },
+    "projectsSection": {
+        "title": "Proyectos",
+        "projects": [
+            {
+                "name": "Gestor Empresarial",
+                "description": [
+                    "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel,",
+                    "Cuenta con gestión de inventarios, con un sistema de requisiciones y órdenes de compra con roles y autorizaciones personalizables, lo que permite una fácil autorización y visualización desde cualquier lugar.",
+                    "Mejorando significativamente la eficiencia y la transparencia en los procesos de adquisición de la empresa."
+                ],
+                "type": "web",
+                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "technologies": [
+                    "next",
+                    "react",
+                    "typescript",
+                    "sass",
+                    "mysql"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "React",
+                    "TypeScript",
+                    "SASS",
+                    "MySQL"
+                ],
+                "demo": {
+                    "text": "Ver demo",
+                    "title": "Accede a la demo del proyecto"
+                },
+                "code": {
+                    "text": "Codigo",
+                    "title": ""
+                }
+            },
+            {
+                "name": "Gestor Empresarial",
+                "description": [
+                    "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel,",
+                    "Cuenta con gestión de inventarios, con un sistema de requisiciones y órdenes de compra con roles y autorizaciones personalizables, lo que permite una fácil autorización y visualización desde cualquier lugar.",
+                    "Mejorando significativamente la eficiencia y la transparencia en los procesos de adquisición de la empresa."
+                ],
+                "type": "web",
+                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "technologies": [
+                    "next",
+                    "react",
+                    "typescript",
+                    "sass",
+                    "mysql"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "React",
+                    "TypeScript",
+                    "SASS",
+                    "MySQL"
+                ],
+                "demo": {
+                    "text": "Ver demo",
+                    "title": "Accede a la demo del proyecto"
+                },
+                "code": {
+                    "text": "Codigo",
+                    "title": ""
+                }
+            }
+        ]
+    },
+    "experienceSection": [
+        {
+            "id": 0,
+            "age_start": 2021,
+            "age_end": 2024,
+            "name": "Desarrollador de Software",
+            "company": "Freelance",
+            "text": "En mi carrera como desarrollado independiente, he relizado proyectos para agilizar los procesos de empresas, viendo sus necesidades y desarrollado el sofware a la medida.",
+            "position": "LEFT",
+            "technologies": [
+                "javascript",
+                "typescript",
+                "react",
+                "next",
+                "csharp",
+                "netcore",
+                "html",
+                "css",
+                "sql",
+                "mysql",
+                "node",
+                "express"
+            ],
+            "name_technologies": [
+                "JavaScript",
+                "TypeScript",
+                "React",
+                "Next",
+                "CSharp",
+                "NetCore",
+                "HTML",
+                "CSS",
+                "SQL",
+                "MySQL",
+                "Node",
+                "Express"
+            ],
+            "softskills": [
+                "Resolución de problemas",
+                "Creatividad",
+                "Pensamiento analítico",
+                "Aprendizaje autodidacta",
+                "Aprendizaje Continuo",
+                "Gestión del Tiempo",
+                "Negociación"
+            ]
+        },
+        {
+            "id": 2,
+            "age_start": 2018,
+            "age_end": 2021,
+            "name": "Ingeniero de desarrollo FT-Automatización",
+            "company": "Vectralis",
+            "text": "Desarrollé y participé en la integración de equipos funcionales y automatización para pruebas eléctricas. Mi enfoque se centró en colaborar en la implementación y optimización de sistemas de prueba que aseguraron la funcionalidad y el rendimiento de productos electrónicos. Participé en proyectos clave donde mi labor contribuyó a la creación de soluciones técnicas que permitieron pruebas precisas y confiables en la industria eléctrica y automotriz.",
+            "position": "RIGHT",
+            "technologies": [
+                "labview",
+                "teststand",
+                "cvi",
+                "c",
+                "csharp",
+                "netcore",
+                "mysql",
+                "altium",
+                "eplan"
+            ],
+            "name_technologies": [
+                "LabVIEW",
+                "Teststand",
+                "CVI",
+                "C",
+                "CSharp",
+                "NetCore",
+                "MySQL",
+                "Altium",
+                "EPLAN"
+            ],
+            "softskills": [
+                "Resolución de problemas",
+                "Trabajo en Equipo",
+                "Aprendizaje autodidacta",
+                "Pensamiento analítico",
+                "Adaptabilidad",
+                "Aprendizaje Continuo"
+            ]
+        },
+        {
+            "id": 3,
+            "age_start": 2016,
+            "age_end": 2018,
+            "name": "Ingeniero de desarrollo FT (Pruebas Funcionales)",
+            "company": "Vectralis",
+            "text": "Mi responsabilidad principal consistía en asegurar el correcto funcionamiento de los aspectos eléctricos y electrónicos de los equipos funcionales. Esto involucraba el diseño detallado de esquemas eléctricos y la resolución de problemas, así como la creación de PCBs (Placas de Circuito Impreso).",
+            "position": "LEFT",
+            "technologies": [
+                "altium",
+                "eplan",
+                "electronic",
+                "schematic"
+            ],
+            "name_technologies": [
+                "Altium",
+                "EPLAN",
+                "Electrónica",
+                "Lectura de Esquemas Electrónicos y Eléctricos"
+            ],
+            "softskills": [
+                "Resolución de problemas",
+                "Aprendizaje Continuo",
+                "Trabajo en Equipo"
+            ]
+        },
+        {
+            "id": 4,
+            "age_start": 2013,
+            "age_end": 2016,
+            "name": "Técnico de FT (Pruebas Funcionales)",
+            "company": "Vectralis",
+            "text": "Encargado del  ruteado y cableado de componentes eléctricos y electrónicos, incluyendo el cableado de tableros de control. Asi como ensamble mecánico de equipos de prueba y automatización.",
+            "position": "RIGHT",
+            "technologies": [
+                "electronic",
+                "schematic",
+                "assembly"
+            ],
+            "name_technologies": [
+                "Electrónica",
+                "Ensamble Mecánico",
+                "Cableado y Conexión Eléctrica",
+                "Uso de Herramientas Mecánicas",
+                "Soldadura estaño"
+            ],
+            "softskills": [
+                "Trabajo en Equipo",
+                "Resolución de problemas",
+                "Aprendizaje Continuo"
+            ]
+        }
+    ],
+    "contactSection": {
+        "title": "Contáctame",
+        "message": [
+            "Si estás interesado en trabajar juntos o simplemente deseas obtener más información, no dudes en contactarme.",
+            "¡Espero con interés escuchar de ti pronto!"
+        ],
+        "form": {
+            "name": {
+                "label": "Nombre",
+                "error": "Por favor, escribe tu nombre"
+            },
+            "email": {
+                "label": "Correo",
+                "error": "Formato de correo no válido"
+            },
+            "message": {
+                "label": "Mensaje",
+                "error": "Por favor, escribe un mensaje"
+            },
+            "response": {
+                "success": [
+                    "¡Gracias por tu mensaje!",
+                    "Tu correo ha sido enviado correctamente.",
+                    "Te responderé lo antes posible."
+                ],
+                "error": [
+                    "Lo siento, ha ocurrido un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde."
+                ]
+            },
+            "button": {
+                "text": "Enviar",
+                "title": "Enviar formulario"
+            }
+        },
+        "copyMessage": "Copiado al portapapeles"
+    }
 }

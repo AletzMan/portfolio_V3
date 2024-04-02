@@ -4,19 +4,19 @@
     align-items: center;
     justify-content: center;
     column-gap: 0.75em;
-    min-width: 7em;
+    min-width: 8.5em;
     min-height: 2.5em;
     box-sizing: border-box;
     padding: 0.25em 0.5em;
     font-size: 0.75em;
-    font-weight: 500;
+    font-weight: 600;
     font-family: var(--fontFamily);
     text-decoration: none;
     border-radius: var(--borderRadius);
-    color: var(--primaryColor);
+    color: var(--backgroundColor);
     border: 1px solid var(--borderColor);
-    background-color: var(--buttonColor);
-    transition: all 0.3s ease-in-out;
+    background-color: var(--secondaryColor);
+    max-width: 12em;
     z-index: 0;
     cursor: pointer;
     overflow: hidden;
@@ -25,22 +25,22 @@
         content: "";
         position: absolute;
         width: 0em;
-        height: 300%;
+        height: 200%;
         background-color: var(--primaryColor);
-        transition: all 0.4s ease-in-out;
+        transition: all 0.45s ease-in-out;
         border: none;
-        opacity: 0;
-        transform: rotate(35deg);
+        opacity: 1;
+        transform: rotate(0) skew(20deg);
         z-index: -1;
     }
 
-    &:hover {
+    &:hover:not(&_disabled) {
         border: 1px solid var(--borderColor);
         color: var(--backgroundColor);
 
         &::after {
             background-color: var(--primaryColor);
-            width: 180%;
+            width: 150%;
             opacity: 1;
         }
 
@@ -59,19 +59,20 @@
         color: var(--backgroundColor);
 
         &::after {
-            background-color: var(--buttonColor);
+            background-color: var(--secondaryColor);
         }
 
+        &:hover:not(&_disabled) {
+            color: var(--backgroundColor);
 
-        &:hover {
-
-            color: var(--primaryColor);
-
-
-            //background-color: var(--backgroundColor);
             &::after {
-                background-color: var(--buttonColor);
+                background-color: var(--secondaryColor);
             }
         }
+    }
+
+    &_disabled {
+        cursor: not-allowed;
+        background-color: #b8b8b8;
     }
 }

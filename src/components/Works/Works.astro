@@ -1,0 +1,36 @@
+---
+import Section from "../Section/Section.astro"
+import WorkView from "../WorkView/WorkView.astro"
+import { type Ii18n } from "../../Types/i18n"
+
+import { getI18n } from "../../i18n/index"
+const { currentLocale } = Astro
+const i18n = getI18n({ currentLocale })
+const translations: Ii18n = i18n as Ii18n
+---
+
+<Section title={i18n.navigationMenu.works.text} id="works">
+	<div class="works">
+		{translations.worksSection.works.map((work) => <WorkView work={work} />)}
+	</div>
+</Section>
+
+<style>
+	.works {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		column-gap: 1em;
+		row-gap: 3em;
+		width: 100%;
+		padding: 5em 0 1em 0;
+
+		@media (width < 655px) {
+			padding: 5em 0em 0em 0em;
+		}
+
+		@media (width < 450px) {
+			grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+		}
+	}
+</style>

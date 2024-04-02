@@ -1,0 +1,116 @@
+---
+import Section from "../Section/Section.astro"
+import SingleExperience from "./SingleExperience.astro"
+
+import { getI18n } from "../../i18n/index"
+import type { Ii18n } from "../../Types/i18n"
+const { currentLocale } = Astro
+const i18n = getI18n({ currentLocale })
+const translations: Ii18n = i18n as Ii18n
+---
+
+<Section title={i18n.navigationMenu.experience.text} id="experience">
+	<div class="experience">
+		{
+			translations.experienceSection.map((work) => (
+				<SingleExperience experienceDescription={work} />
+			))
+		}
+		<div class="timeline" style={`grid-row: 1/${i18n.experienceSection.length + 1} ;`}>
+			<div class="timeline_border timeline_border-end"></div>
+			<div class="timeline_border timeline_border-start"></div>
+			<div class="timeline_line"></div>
+			<svg class={`work_line`} viewBox="0 0 30 980">
+				<line class="st1" x1="15" y1="0" x2="15" y2="980"></line>
+				<g id="tracksDisplay" stroke-dasharray="1,25" stroke-dashoffset="200">
+					<line class="st0" x1="15" y1="980" x2="15" y2="0"></line>
+				</g>
+			</svg>
+		</div>
+	</div>
+</Section>
+<style>
+	.experience {
+		display: grid;
+		grid-template-columns: 1fr 2em 1fr;
+		height: 100%;
+		padding: 5em 0 1em 0;
+		background-color: #6c3b3b00;
+
+		@media (width < 1000px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			row-gap: 1em;
+		}
+	}
+
+	.timeline {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		grid-column: 2 / 3;
+		width: 2em;
+		height: 100%;
+		background-color: #ffff5500;
+
+		@media (width < 1000px) {
+			display: none;
+		}
+
+		& .timeline_line {
+			height: 100%;
+			width: 6px;
+			border: 1px double #c2d07650;
+		}
+
+		& .timeline_border {
+			position: absolute;
+			height: 3px;
+			width: 0.5em;
+			background-color: var(--secondaryColor);
+		}
+
+		& .timeline_border-start {
+			border-radius: 0 0 var(--borderRadius) var(--borderRadius);
+		}
+
+		& .timeline_border-end {
+			bottom: 0;
+			border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+		}
+	}
+
+	.work_line {
+		position: absolute;
+		width: 2em;
+		height: 100%;
+		right: 0;
+		top: 0em;
+		background-color: #dd332200;
+	}
+
+	.st0 {
+		stroke: var(--secondaryColor);
+
+		animation: draw 6s infinite 1s;
+		animation-timing-function: linear;
+		@media (width < 1000px) {
+			display: none;
+		}
+	}
+
+	.st1 {
+		stroke: #c2d07650;
+		@media (width < 1000px) {
+			display: none;
+		}
+	}
+
+	@keyframes draw {
+		to {
+			stroke-dashoffset: 0;
+			opacity: 1;
+		}
+	}
+</style>

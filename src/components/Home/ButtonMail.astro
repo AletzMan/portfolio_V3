@@ -5,38 +5,56 @@ import Copy from "../svg/Copy.astro"
 import Send from "../svg/Send.astro"
 
 const MAIL = "alejandro.ga.dev@gmail.com"
+
+import { getI18n } from "../../i18n/index"
+const { currentLocale } = Astro
+const i18n = getI18n({ currentLocale })
+
+interface Props {
+	isSecondary?: boolean
+}
+const { isSecondary } = Astro.props
 ---
 
 <div class="mailContainer">
-	<Button id="buttonMail" type="Button" text="Email" isSecondary>
+	<div class="tooltipCopy">
+		<p>{i18n.contactSection.copyMessage}</p>
+	</div>
+	<Button
+		id="buttonMail"
+		type="Button"
+		text="Email"
+		title={i18n.socialMedia.email.title}
+		isSecondary={isSecondary}
+	>
 		<Email />
 	</Button>
 	<div id="menuMail" class="menuMail">
 		<button
 			id="buttonCopy"
 			class="buttonCopySend"
-			title="Copiar correo electrónico"
+			title={i18n.socialMedia.email.copy.title}
 			aria-label="Copiar correo electrónico"
 		>
 			<Copy />
-			Copiar
+			{i18n.socialMedia.email.copy.text}
 		</button>
 		<a
 			id="buttonSend"
 			class="buttonCopySend"
 			href={`mailto:${MAIL}`}
-			title="Enviar correo electrónico"
+			title={i18n.socialMedia.email.send.title}
 			aria-label="Enviar correo electrónico"
 		>
 			<Send />
-			Enviar
+			{i18n.socialMedia.email.send.text}
 		</a>
 	</div>
 </div>
 <script is:inline>
 	const buttonMail = document.getElementById("buttonMail")
 	const menuMail = document.getElementById("menuMail")
-	const buttonCopy = document.getElementById("buttonCopy")
+	const tooltipCopy = document.querySelector(".tooltipCopy")
 
 	const MAIL = "alejandro.ga.dev@gmail.com"
 
@@ -47,6 +65,10 @@ const MAIL = "alejandro.ga.dev@gmail.com"
 	const HandlerClickMail = () => {
 		navigator.clipboard.writeText(MAIL)
 		menuMail.classList.remove("menuMail_active")
+		tooltipCopy.classList.add("tooltipCopyMove")
+		setTimeout(() => {
+			tooltipCopy.classList.remove("tooltipCopyMove")
+		}, 2000)
 	}
 
 	const HandlerBlurMenuMail = () => {
@@ -107,5 +129,39 @@ const MAIL = "alejandro.ga.dev@gmail.com"
 			background-color: var(--backgroundColor);
 			color: var(--primaryColor);
 		}
+	}
+
+	.tooltipCopy {
+		position: absolute;
+		top: -3.5em;
+		left: -0.5em;
+		width: 10em;
+		color: var(--backgroundColor);
+		font-size: 0.7em;
+		font-weight: 500;
+		text-align: center;
+		border-radius: 0.235em;
+		background-color: var(--secondaryColor);
+		padding: 0.35em 0.5em;
+		transform: translateY(4em) scale(0.7);
+		transition: all 0.3s ease-in-out;
+		line-height: 1.2em;
+		opacity: 0;
+
+		&::after {
+			position: absolute;
+			bottom: -0.3em;
+			left: 4.5em;
+			content: "";
+			border-bottom: 0.8em solid var(--secondaryColor);
+			border-left: 0.8em transparent;
+			border-right: 0.8em solid transparent;
+			transform: rotate(-45deg);
+		}
+	}
+
+	.tooltipCopyMove {
+		opacity: 1;
+		transform: translateY(0em) scale(1);
 	}
 </style>

@@ -48,7 +48,7 @@
         "title": "Proyectos",
         "works": [
             {
-                "name": "Gestor Empresarial",
+                "name": "Gestión de Inventarios y Compras",
                 "description": [
                     "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel,",
                     "Cuenta con gestión de inventarios, con un sistema de requisiciones y órdenes de compra con roles y autorizaciones personalizables, lo que permite una fácil autorización y visualización desde cualquier lugar.",
@@ -72,43 +72,44 @@
                 ],
                 "demo": {
                     "text": "Ver demo",
-                    "title": "Accede a la demo del proyecto"
+                    "title": "Accede a la demo del proyecto",
+                    "link": ""
                 },
                 "code": {
                     "text": "Codigo",
-                    "title": ""
+                    "title": "",
+                    "link": ""
                 }
             },
             {
-                "name": "Gestor Empresarial",
+                "name": "Secuenciador de pruebas",
                 "description": [
-                    "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel,",
-                    "Cuenta con gestión de inventarios, con un sistema de requisiciones y órdenes de compra con roles y autorizaciones personalizables, lo que permite una fácil autorización y visualización desde cualquier lugar.",
-                    "Mejorando significativamente la eficiencia y la transparencia en los procesos de adquisición de la empresa."
+                    "Es una herramienta utilizada en el campo de la ingeniería electrónica para automatizar y gestionar el proceso de prueba de circuitos y dispositivos electrónicos. Su principal función es ejecutar una serie de pruebas predeterminadas de manera secuencial y sistemática, asegurando que cada componente del dispositivo funcione correctamente bajo diferentes condiciones.",
+                    "Es esencial para asegurar la fiabilidad, calidad y rendimiento de los productos electrónicos, haciendo que el proceso de prueba sea más eficiente y efectivo."
                 ],
-                "type": "web",
-                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "type": "desktop",
+                "image": "/screen-projects/FrameTestSequencer.webp",
                 "technologies": [
-                    "next",
-                    "react",
-                    "typescript",
-                    "sass",
+                    "csharp",
+                    "netcore",
+                    "sql",
                     "mysql"
                 ],
                 "technologies_names": [
-                    "Next",
-                    "React",
-                    "TypeScript",
-                    "SASS",
+                    "C#",
+                    ".NET Framewwork WMF",
+                    "SQL",
                     "MySQL"
                 ],
                 "demo": {
                     "text": "Ver demo",
-                    "title": "Accede a la demo del proyecto"
+                    "title": "Accede a la demo del proyecto",
+                    "link": ""
                 },
                 "code": {
                     "text": "Codigo",
-                    "title": ""
+                    "title": "",
+                    "link": ""
                 }
             }
         ]
@@ -117,67 +118,102 @@
         "title": "Proyectos",
         "projects": [
             {
-                "name": "Gestor Empresarial",
+                "name": "Technolife Shop e-commerce",
                 "description": [
-                    "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel,",
-                    "Cuenta con gestión de inventarios, con un sistema de requisiciones y órdenes de compra con roles y autorizaciones personalizables, lo que permite una fácil autorización y visualización desde cualquier lugar.",
-                    "Mejorando significativamente la eficiencia y la transparencia en los procesos de adquisición de la empresa."
+                    "Plataforma dedicada a la venta de productos electrónicos.",
+                    "Ofrece una experiencia de compra intuitiva y funcional, que incluye funcionalidades como búsqueda y filtrado de productos, carrito de compras, lista de favoritos, inicio de sesión de usuarios, registro y recuperacion de contraseña, subscripcion a boletin y una pasarela de pago segura."
                 ],
                 "type": "web",
-                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "image": "/screen-projects/FrameEcommerce.webp",
                 "technologies": [
                     "next",
                     "react",
                     "typescript",
                     "sass",
-                    "mysql"
+                    "sql",
+                    "postgresql"
                 ],
                 "technologies_names": [
                     "Next",
                     "React",
                     "TypeScript",
                     "SASS",
-                    "MySQL"
+                    "SQL",
+                    "PostgreSQL"
                 ],
                 "demo": {
                     "text": "Ver demo",
-                    "title": "Accede a la demo del proyecto"
+                    "title": "Accede a la demo del proyecto",
+                    "link": "https://technolife-ecommerce.vercel.app/"
                 },
                 "code": {
                     "text": "Codigo",
-                    "title": ""
+                    "title": "Acceso al código del proyecto",
+                    "link": "https://github.com/AletzMan/technolife_ecommerce"
                 }
             },
             {
-                "name": "Gestor Empresarial",
+                "name": "Dashboard e-commerce",
                 "description": [
-                    "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel,",
-                    "Cuenta con gestión de inventarios, con un sistema de requisiciones y órdenes de compra con roles y autorizaciones personalizables, lo que permite una fácil autorización y visualización desde cualquier lugar.",
-                    "Mejorando significativamente la eficiencia y la transparencia en los procesos de adquisición de la empresa."
+                    "Herramienta integral diseñada para proporcionar a los usuarios información valiosa y capacidades de gestión para su plataforma de comercio electrónico. Con una interfaz fácil de usar y características potentes, el panel de control permite a los usuarios monitorear métricas clave, gestionar inventario, rastrear pedidos y analizar el rendimiento de ventas."
                 ],
                 "type": "web",
-                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "image": "/screen-projects/FrameDashboard.webp",
                 "technologies": [
                     "next",
-                    "react",
                     "typescript",
                     "sass",
-                    "mysql"
+                    "sql",
+                    "postgresql"
                 ],
                 "technologies_names": [
                     "Next",
-                    "React",
                     "TypeScript",
                     "SASS",
-                    "MySQL"
+                    "SQL",
+                    "PostgreSQL"
                 ],
                 "demo": {
                     "text": "Ver demo",
-                    "title": "Accede a la demo del proyecto"
+                    "title": "Accede a la demo del proyecto",
+                    "link": "https://dashboard-ecommerce-seven.vercel.app/dashboard/overview"
                 },
                 "code": {
                     "text": "Codigo",
-                    "title": ""
+                    "title": "Acceso al código del proyecto",
+                    "link": "https://github.com/AletzMan/dashboard_ecommerce"
+                }
+            },
+            {
+                "name": "API e-commerce",
+                "description": [
+                    "API de comercio electrónico que proporciona todas las herramientas necesarias para gestionar eficazmente una tienda en línea.",
+                    "Desde la gestión de usuarios hasta el procesamiento de pagos.",
+                    "Con funciones para gestionar usuarios, productos, pedidos, comunicacion con clientes, newsletter y promociones."
+                ],
+                "type": "backend",
+                "image": "/screen-projects/FrameApi.webp",
+                "technologies": [
+                    "node",
+                    "typescript",
+                    "express",
+                    "postgresql"
+                ],
+                "technologies_names": [
+                    "NodeJS",
+                    "TypeScript",
+                    "Express",
+                    "PostgreSQL"
+                ],
+                "demo": {
+                    "text": "Docs",
+                    "title": "Acceso a la documentación de la API",
+                    "link": "https://technolife-api.vercel.app/api-docs"
+                },
+                "code": {
+                    "text": "Code",
+                    "title": "Acceso al código del proyecto",
+                    "link": "https://github.com/AletzMan/technolife_api"
                 }
             }
         ]

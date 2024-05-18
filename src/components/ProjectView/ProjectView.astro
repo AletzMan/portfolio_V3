@@ -19,10 +19,21 @@ const { project } = Astro.props
 			<img class="project_image" src={project.image} />
 		</picture>
 		<footer class="project_footer">
-			<Button type="Button" text={project.demo.text} title={project.demo.title}>
+			<Button
+				href={project.demo.link}
+				type="Link"
+				text={project.demo.text}
+				title={project.demo.title}
+			>
 				<ViewIcon />
 			</Button>
-			<Button type="Button" text={project.code.text} title={project.code.title} isSecondary>
+			<Button
+				href={project.code.link}
+				type="Link"
+				text={project.code.text}
+				title={project.code.title}
+				isSecondary
+			>
 				<GitHub />
 			</Button>
 		</footer>
@@ -32,7 +43,7 @@ const { project } = Astro.props
 			<TechTypeIcon className="project_type-icon" type={project.type} />
 			<span class="project_type-text">{project.type}</span>
 		</div>
-		<p class="project_description">{project.description}</p>
+		{project.description.map((description) => <p class="project_description">{description}</p>)}
 		<div class="project_technologies">
 			{
 				project.technologies.map((tech, index) => (
@@ -122,6 +133,7 @@ const { project } = Astro.props
 
 	.project_title {
 		color: var(--primaryColor);
+		text-wrap: balance;
 	}
 
 	.project_type {
@@ -174,6 +186,7 @@ const { project } = Astro.props
 		font-size: 0.7em;
 		color: var(--primaryColor);
 		font-weight: 400;
+		text-wrap: pretty;
 	}
 
 	.project_technologies {

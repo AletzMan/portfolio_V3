@@ -48,7 +48,7 @@
         "title": "Projects",
         "works": [
             {
-                "name": "Business Manager",
+                "name": "Inventory Management and Purchasing",
                 "description": [
                     "Web application that enabled a modernization of business processes by replacing the use of Excel,",
                     "It features inventory management, with a system of requisitions and purchase orders with customizable roles and authorizations, allowing for easy authorization and viewing from anywhere.",
@@ -72,43 +72,44 @@
                 ],
                 "demo": {
                     "text": "Demo",
-                    "title": "Access to the demo project"
+                    "title": "Access to the demo project",
+                    "link": ""
                 },
                 "code": {
                     "text": "Code",
-                    "title": ""
+                    "title": "",
+                    "link": ""
                 }
             },
             {
-                "name": "Business Manager",
+                "name": "Test Sequencer",
                 "description": [
-                    "Web application that enabled a modernization of business processes by replacing the use of Excel,",
-                    "It features inventory management, with a system of requisitions and purchase orders with customizable roles and authorizations, allowing for easy authorization and viewing from anywhere.",
-                    "Significantly improving efficiency and transparency in the company's procurement processes."
+                    "It is a tool used in the field of electronic engineering to automate and manage the testing process of circuits and electronic devices. Its main function is to execute a series of predefined tests sequentially and systematically, ensuring that each component of the device operates correctly under different conditions.",
+                    "Is essential for ensuring the reliability, quality, and performance of electronic products, making the testing process more efficient and effective."
                 ],
-                "type": "web",
-                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "type": "desktop",
+                "image": "/screen-projects/FrameTestSequencer.webp",
                 "technologies": [
-                    "next",
-                    "react",
-                    "typescript",
-                    "sass",
+                    "csharp",
+                    "netcore",
+                    "sql",
                     "mysql"
                 ],
                 "technologies_names": [
-                    "Next",
-                    "React",
-                    "TypeScript",
-                    "SASS",
+                    "C#",
+                    ".NET Framewwork WMF",
+                    "SQL",
                     "MySQL"
                 ],
                 "demo": {
                     "text": "Demo",
-                    "title": "Access to the demo project"
+                    "title": "Access to the demo project",
+                    "link": ""
                 },
                 "code": {
                     "text": "Code",
-                    "title": ""
+                    "title": "",
+                    "link": ""
                 }
             }
         ]
@@ -117,67 +118,101 @@
         "title": "Projects",
         "projects": [
             {
-                "name": "Business Manager",
+                "name": "Technolife Shop e-commerce",
                 "description": [
-                    "Web application that enabled a modernization of business processes by replacing the use of Excel,",
-                    "It features inventory management, with a system of requisitions and purchase orders with customizable roles and authorizations, allowing for easy authorization and viewing from anywhere.",
-                    "Significantly improving efficiency and transparency in the company's procurement processes."
+                    "Platform dedicated to the sale of electronic products.",
+                    "It offers an intuitive and functional shopping experience, which includes features such as product search and filtering, shopping cart, favorites list, user login, registration and password recovery, newsletter subscription and a secure payment gateway."
                 ],
                 "type": "web",
-                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "image": "/screen-projects/FrameEcommerce.webp",
                 "technologies": [
                     "next",
-                    "react",
                     "typescript",
                     "sass",
-                    "mysql"
+                    "sql",
+                    "postgresql"
                 ],
                 "technologies_names": [
                     "Next",
-                    "React",
                     "TypeScript",
                     "SASS",
-                    "MySQL"
+                    "SQL",
+                    "PostgreSQL"
                 ],
                 "demo": {
                     "text": "Demo",
-                    "title": "Access to the demo project"
+                    "title": "Access to the demo project",
+                    "link": "https://technolife-ecommerce.vercel.app/"
                 },
                 "code": {
                     "text": "Code",
-                    "title": ""
+                    "title": "Access to the project code",
+                    "link": "https://github.com/AletzMan/technolife_ecommerce"
                 }
             },
             {
-                "name": "Business Manager",
+                "name": "Dashboard e-commerce",
                 "description": [
-                    "Web application that enabled a modernization of business processes by replacing the use of Excel,",
-                    "It features inventory management, with a system of requisitions and purchase orders with customizable roles and authorizations, allowing for easy authorization and viewing from anywhere.",
-                    "Significantly improving efficiency and transparency in the company's procurement processes."
+                    "Comprehensive tool designed to provide users with valuable insights and management capabilities for their e-commerce platform.",
+                    "With a user-friendly interface and powerful features, the dashboard enables users to monitor key metrics, manage inventory, track orders, and analyze sales performance."
                 ],
                 "type": "web",
-                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "image": "/screen-projects/FrameDashboard.webp",
                 "technologies": [
                     "next",
-                    "react",
                     "typescript",
                     "sass",
-                    "mysql"
+                    "sql",
+                    "postgresql"
                 ],
                 "technologies_names": [
                     "Next",
-                    "React",
                     "TypeScript",
                     "SASS",
-                    "MySQL"
+                    "SQL",
+                    "PostgreSQL"
                 ],
                 "demo": {
                     "text": "Demo",
-                    "title": "Access to the demo project"
+                    "title": "Access to the demo project",
+                    "link": "https://dashboard-ecommerce-seven.vercel.app/dashboard/overview"
                 },
                 "code": {
                     "text": "Code",
-                    "title": ""
+                    "title": "Access to the project code",
+                    "link": "https://github.com/AletzMan/dashboard_ecommerce"
+                }
+            },
+            {
+                "name": "API e-commerce",
+                "description": [
+                    "E-commerce API that provides all the necessary tools to effectively manage an online store.",
+                    "From user management to payment processing.",
+                    "With functions to manage users, products, orders, customers communication, newsletter and promotions."
+                ],
+                "type": "backend",
+                "image": "/screen-projects/FrameApi.webp",
+                "technologies": [
+                    "node",
+                    "typescript",
+                    "express",
+                    "postgresql"
+                ],
+                "technologies_names": [
+                    "NodeJS",
+                    "TypeScript",
+                    "Express",
+                    "PostgreSQL"
+                ],
+                "demo": {
+                    "text": "Docs",
+                    "title": "Access to API Documentation",
+                    "link": "https://technolife-api.vercel.app/api-docs"
+                },
+                "code": {
+                    "text": "Code",
+                    "title": "Access to the project code",
+                    "link": "https://github.com/AletzMan/technolife_api"
                 }
             }
         ]

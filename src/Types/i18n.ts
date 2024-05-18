@@ -41,6 +41,12 @@ export interface Iin18Button {
 	title: string
 }
 
+export interface Iin18ButtonLink {
+	text: string
+	title: string
+	link: string
+}
+
 export interface IFieldForm {
 	label: string
 	error: string
@@ -53,8 +59,8 @@ export interface Ii18nProject {
 	image: string
 	technologies: string[]
 	technologies_names: string[]
-	demo: Iin18Button
-	code: Iin18Button
+	demo: Iin18ButtonLink
+	code: Iin18ButtonLink
 }
 
 export interface Ii18nExperience {

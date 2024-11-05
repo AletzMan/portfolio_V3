@@ -23,10 +23,12 @@ export interface Ii18n {
 	worksSection: {
 		title: string
 		works: Ii18nProject[]
+		buttonClose: string
 	}
 	projectsSection: {
 		title: string
 		projects: Ii18nProject[]
+		buttonClose: string
 	}
 	experienceSection: Ii18nExperience[]
 	contactSection: {
@@ -57,6 +59,7 @@ export interface Ii18nProject {
 	description: string[]
 	type: "web" | "desktop" | "mobile"
 	image: string
+	slides: string[]
 	technologies: string[]
 	technologies_names: string[]
 	demo: Iin18ButtonLink

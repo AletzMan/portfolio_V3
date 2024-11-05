@@ -13,22 +13,22 @@ const i18n = getI18n({ currentLocale })
 		<div class="home_picture">
 			<img class="photoProfile" src="/profile-photo.webp" alt="Alejandro Garcia" />
 			<div class="logosRotate">
-				<div class="logotech logoJS">
+				<div class="logotech logoJS" attr-nametech="JavaScript">
 					<img class="logo_image" src="/icons/javascript-logo.svg" title="JavaScript" />
 				</div>
-				<div class="logotech logoReact">
+				<div class="logotech logoReact" attr-nametech="React JS">
 					<img class="logo_image" src="/icons/react-logo.svg" title="React JS" />
 				</div>
-				<div class="logotech logoTS">
+				<div class="logotech logoTS" attr-nametech="TypeScript">
 					<img class="logo_image" src="/icons/typescript-logo.svg" title="TypeScript" />
 				</div>
-				<div class="logotech logoNext">
+				<div class="logotech logoNext" attr-nametech="Next JS">
 					<img class="logo_image" src="/icons/next-logo.svg" title="Next JS" />
 				</div>
-				<div class="logotech logoCS">
+				<div class="logotech logoCS" attr-nametech="C Sharp">
 					<img class="logo_image" src="/icons/csharp-logo.svg" title="C Sharp" />
 				</div>
-				<div class="logotech logoNET">
+				<div class="logotech logoNET" attr-nametech=".NET">
 					<img class="logo_image" src="/icons/netcore-logo.svg" title=".Net" />
 				</div>
 			</div>
@@ -179,16 +179,41 @@ const i18n = getI18n({ currentLocale })
 
 		&:hover {
 			border: 5px;
+			box-shadow: -10px -10px 12px 7px #faf9fa00 inset;
 
 			& :first-child {
 				transform: scale(4);
-				opacity: 0.8;
+				opacity: 1;
+			}
+
+			&::before {
+				position: absolute;
+				top: -4em;
+				content: attr(attr-nametech);
+				border-radius: 0.2em;
+				width: 5.5em;
+				font-size: 0.7em;
+				font-weight: 500;
+				padding: 0.1em 0.3em;
+				background-color: var(--primaryColor);
+				color: var(--backgroundColor);
+				animation: nameTech 0.5s ease-in-out both;
+				z-index: 3;
 			}
 		}
 
 		@media (width < 500px) {
-			width: 1.5em;
-			height: 1.5em;
+			width: 1em;
+			height: 1em;
+		}
+	}
+
+	@keyframes nameTech {
+		0% {
+			transform: scale(0);
+		}
+		100% {
+			transform: scale(1);
 		}
 	}
 
@@ -204,31 +229,55 @@ const i18n = getI18n({ currentLocale })
 	.logoJS {
 		left: 1.2em;
 		top: 1.2em;
+
+		@media (width < 500px) {
+			top: 0.5em;
+		}
 	}
 
 	.logoReact {
 		right: 1.2em;
 		top: 1.2em;
+
+		@media (width < 500px) {
+			top: 0.5em;
+		}
 	}
 
 	.logoTS {
-		left: -0.7em;
+		left: -0.75em;
 		bottom: 45%;
+
+		@media (width < 500px) {
+			left: -0.55em;
+		}
 	}
 
 	.logoNext {
 		right: 1.2em;
 		bottom: 1.2em;
+
+		@media (width < 500px) {
+			bottom: 0.5em;
+		}
 	}
 
 	.logoCS {
 		left: 1.2em;
 		bottom: 1.2em;
+
+		@media (width < 500px) {
+			bottom: 0.5em;
+		}
 	}
 
 	.logoNET {
 		right: -0.75em;
 		top: 46%;
+
+		@media (width < 500px) {
+			right: -0.6em;
+		}
 	}
 
 	.logo_image {
@@ -239,8 +288,8 @@ const i18n = getI18n({ currentLocale })
 		transition: transform 0.3s ease-in-out;
 
 		@media (width < 500px) {
-			width: 1.5em;
-			height: 1.5em;
+			width: 1.15em;
+			height: 1.15em;
 		}
 	}
 

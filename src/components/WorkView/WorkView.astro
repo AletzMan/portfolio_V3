@@ -4,6 +4,8 @@ import { Button } from "../Button/Button"
 import TechTypeIcon from "../TechTypeIcon.astro"
 import ViewIcon from "../svg/ViewIcon.astro"
 import GitHub from "../svg/GitHub.astro"
+import Browser from "../Browser/Browser.astro"
+import ZoomIcon from "../svg/ZoomIcon.astro"
 
 interface Props {
 	work: Ii18nProject
@@ -15,9 +17,10 @@ const { work } = Astro.props
 <article class="work">
 	<div class="work_first">
 		<h1 class="work_title">{work.name}</h1>
-		<picture class="work_picture">
-			<img class="work_image" src={work.image} />
-		</picture>
+		<div class="work_picture">
+			<!-- <img class="work_image" src={work.image} /> -->
+			<Browser images={{ fixed: work.image, slides: work.slides }} type={work.type} />
+		</div>
 		<footer class="work_footer">
 			<Button type="Button" text={work.demo.text} title={work.demo.title}>
 				<ViewIcon />
@@ -55,7 +58,6 @@ const { work } = Astro.props
 </article>
 <style>
 	.work {
-		position: relative;
 		display: flex;
 		flex-flow: row wrap;
 		gap: 1em;
@@ -69,23 +71,10 @@ const { work } = Astro.props
 		pointer-events: all;
 		backdrop-filter: blur(5px);
 
-		view-timeline-axis: block;
-		animation-fill-mode: both;
-		/*animation-timing-function: cubic-bezier(0.58, -0.36, 0.38, 1.37);*/
-		&:nth-child(2n + 1) {
-			view-timeline-name: --cardProjectLeft;
-			animation-timeline: --cardProjectLeft;
-			animation-name: showCardProjectLeft;
-			animation-range: entry 0% cover 25%;
-		}
-
-		&:nth-child(2n) {
-			view-timeline-name: --cardProject;
-			animation-timeline: --cardProject;
-			animation-name: showCardProject;
-			animation-range: entry 0% cover 40%;
-			flex-direction: row-reverse;
-		}
+		view-timeline-name: --cardProjectLeft;
+		animation-timeline: --cardProjectLeft;
+		animation-name: showCardProjectDown;
+		animation-range: entry 20% cover 25%;
 	}
 
 	@media (width < 500px) {
@@ -94,36 +83,15 @@ const { work } = Astro.props
 			animation-name: showCardProjectDown;
 		}
 	}
-	@keyframes showCardProject {
-		from {
-			opacity: 0;
-			transform: translateX(30%);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
-
-	@keyframes showCardProjectLeft {
-		from {
-			opacity: 0;
-			transform: translateX(-30%);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
 
 	@keyframes showCardProjectDown {
 		from {
 			opacity: 0;
-			scale: 0.2;
+			transform: translateY(30%) scale(0);
 		}
 		to {
 			opacity: 1;
-			scale: 1;
+			transform: translateY(0) scale(1);
 		}
 	}
 
@@ -137,10 +105,6 @@ const { work } = Astro.props
 		flex: 1 1 20em;
 		border-radius: var(--borderRadius);
 		background-color: var(--backgroundColor);
-
-		&:hover .work_image {
-			transform: scale(1.1);
-		}
 
 		@media (width < 450px) {
 			border: none;
@@ -176,23 +140,19 @@ const { work } = Astro.props
 	}
 
 	.work_picture {
+		position: relative;
 		display: flex;
 		border-radius: var(--borderRadius);
 		border: 2px solid var(--primaryColor);
 		width: 100%;
-		height: max-content;
+		height: 100%;
+		/*height: max-content;*/
 		margin: 0.5em 0;
 		overflow: hidden;
+		background: linear-gradient(#0ebbdd, #29f29c);
 		box-shadow:
 			3px 2px 13px 1px #10111575,
 			-7px -7px 15px #2e303a00;
-	}
-
-	.work_image {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: all 0.4s ease-in-out;
 	}
 
 	.work_details {

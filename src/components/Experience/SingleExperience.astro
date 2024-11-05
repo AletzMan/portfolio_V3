@@ -102,6 +102,13 @@ const { experienceDescription } = Astro.props
 		}
 	}
 
+	@media (width < 1000px) {
+		.experience_right::after,
+		.experience_left::after {
+			display: none;
+		}
+	}
+
 	.experience_header {
 		display: flex;
 		flex-direction: column;

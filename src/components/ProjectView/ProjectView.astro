@@ -4,6 +4,7 @@ import { Button } from "../Button/Button"
 import TechTypeIcon from "../TechTypeIcon.astro"
 import ViewIcon from "../svg/ViewIcon.astro"
 import GitHub from "../svg/GitHub.astro"
+import Star from "../svg/Star.astro"
 
 interface Props {
 	project: Ii18nProject
@@ -18,6 +19,7 @@ const { project } = Astro.props
 		<picture class="project_picture">
 			<img class="project_image" src={project.image} />
 		</picture>
+		{project.name === "Code Challenge" && <Star class="star" />}
 		<footer class="project_footer">
 			<Button
 				href={project.demo.link}
@@ -85,37 +87,45 @@ const { project } = Astro.props
 			view-timeline-name: --cardProjectLeft;
 			animation-timeline: --cardProjectLeft;
 			animation-name: showCardProjectLeft;
-			animation-range: entry 5% cover 25%;
+			animation-range: entry 10% cover 25%;
 		}
 
 		&:nth-child(2n) {
 			view-timeline-name: --cardProject;
 			animation-timeline: --cardProject;
 			animation-name: showCardProject;
-			animation-range: entry 5% cover 25%;
+			animation-range: entry 10% cover 25%;
 		}
 	}
 
 	@keyframes showCardProject {
 		from {
 			opacity: 0;
-			transform: translateX(50%);
+
+			transform: translateY(30%) scale(0);
 		}
 		to {
 			opacity: 1;
-			transform: translateX(0);
+			transform: translateY(0) scale(1);
 		}
 	}
 
 	@keyframes showCardProjectLeft {
 		from {
 			opacity: 0;
-			transform: translateX(-50%);
+			transform: translateY(30%) scale(0);
 		}
 		to {
 			opacity: 1;
-			transform: translateX(0);
+			transform: translateY(0) scale(1);
 		}
+	}
+
+	.star {
+		position: absolute;
+		top: 3em;
+		width: 1.5em;
+		height: 1.5em;
 	}
 
 	.project_first {

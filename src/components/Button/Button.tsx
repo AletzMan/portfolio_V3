@@ -12,9 +12,10 @@ interface Props {
 	id?: string
 	className?: string
 	disabled?: boolean
+	download?: boolean
 }
 
-export function Button({ type, href, text, children, isSecondary, id, title, className, disabled }: Props) {
+export function Button({ type, href, text, children, isSecondary, id, title, className, disabled, download }: Props) {
 
 
 	return (
@@ -26,6 +27,7 @@ export function Button({ type, href, text, children, isSecondary, id, title, cla
 					href={href}
 					target="_blank"
 					title={title}
+					download={download}
 				>
 					{children}
 					{text}

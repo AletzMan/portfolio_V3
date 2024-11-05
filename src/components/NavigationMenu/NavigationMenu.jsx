@@ -12,18 +12,17 @@ export default function NavigationMenu(props) {
 
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll)
-
 		return () => {
 			window.removeEventListener("scroll", handleScroll)
 		}
 	}, [])
 
 	const handleScroll = () => {
-		if (scrollY < 500) setScroll("home")
-		if (scrollY > 500 && scrollY < 1400) setScroll("works")
-		if (scrollY > 1400 && scrollY < 2300) setScroll("projects")
-		if (scrollY > 2977 && scrollY < 4640) setScroll("experience")
-		if (scrollY > 4640) setScroll("contact")
+		if (scrollY < 550) setScroll("home")
+		if (scrollY > 550 && scrollY < 2250) setScroll("works")
+		if (scrollY > 2250 && scrollY < 3550) setScroll("projects")
+		if (scrollY > 3550 && scrollY < 5150) setScroll("experience")
+		if (scrollY > 5150) setScroll("contact")
 	}
 
 	return (

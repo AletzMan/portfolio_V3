@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     column-gap: 1.5em;
-    width: 100%;
+    // width: 100%;
 
     @media (width < 768px) {
         display: none;
@@ -23,11 +23,12 @@
         transform: scale(0.9) translateY(-2px);
         transform-origin: 50% 100%;
         color: var(--primaryColor);
-        background: radial-gradient(transparent 40%, var(--borderColor) 80%);
+        background: radial-gradient(#3b424c 40%, #25292f 80%);
         transition: all 0.25s ease-in-out;
+        border: 1px solid var(--borderColor);
 
 
-        &:hover {
+        &:not(.nav_linkActive):hover {
             color: var(--secondaryColor);
             transform: scale(1.2) translateY(-5px);
             margin: 0 0.25em 0 0.25em;
@@ -37,14 +38,29 @@
             }
         }
 
-        &Active:not(&:hover) {
+        &Active {
             color: var(--secondaryColor);
             transform: scale(1.2) translateY(-5px);
             margin: 0 0.25em 0 0.25em;
-            pointer-events: none;
+            //pointer-events: none;
 
             & .nav_name {
                 display: block;
+            }
+        }
+
+
+    }
+
+    &:hover {
+        .nav_linkActive:not(:hover) {
+            color: var(--primaryColor);
+            transform: scale(0.9) translateY(-2px);
+            margin: 0;
+            //pointer-events: none;
+
+            & .nav_name {
+                display: none;
             }
         }
     }
@@ -65,6 +81,7 @@
                 var(--secondaryColor) 70%);
         z-index: 2;
         transition: all 0.15s ease-in-out;
+        animation: showLetter 0.25s ease-in-out both;
 
         &::after {
             position: absolute;
@@ -86,7 +103,15 @@
     }
 }
 
+@keyframes showLetter {
+    from {
+        transform: scale(0);
+    }
 
+    to {
+        transform: scale(1);
+    }
+}
 
 @keyframes show {
     from {

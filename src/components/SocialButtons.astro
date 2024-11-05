@@ -41,7 +41,9 @@ const { hasButtonCV, hasButtonMail, isSecondary } = Astro.props
 		hasButtonCV && (
 			<Button
 				id="buttonCV"
-				type="Button"
+				type="Link"
+				download
+				href="https://drive.google.com/file/d/1FsdIfGkaIKk6pT_dhK2w035hsGIrNF0E/view?usp=drive_link"
 				text={i18n.socialMedia.resume.text}
 				title={i18n.socialMedia.resume.title}
 			>

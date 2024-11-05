@@ -22,7 +22,6 @@ const { title, description } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body id="containerBalls">
-		<div id="containerBalls2"></div>
 		<BouncingBall client:load />
 		<slot />
 		<Background />
@@ -87,8 +86,7 @@ const { title, description } = Astro.props
 		/*background: #8ec3b0;*/
 		/*background: #99a799;*/
 		/*background: #7c9473;*/
-		background: #99cda9;
-		background-size: 224px;
+		background: radial-gradient(#161c28 20%, #0c0f16);
 	}
 
 	code {
@@ -106,6 +104,7 @@ const { title, description } = Astro.props
 	body {
 		background: radial-gradient(#161c28 20%, #0c0f16);
 		scroll-behavior: smooth;
+		width: 100svw;
 		overflow-x: hidden;
 
 		&::-webkit-scrollbar {
@@ -136,7 +135,7 @@ const { title, description } = Astro.props
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 65%;
-		opacity: 0.35;
+		opacity: 0.05;
 		transition: opacity 0.3s ease-in-out;
 		color: var(--textColor);
 		z-index: 0;
@@ -152,7 +151,7 @@ const { title, description } = Astro.props
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 100svw;
 		z-index: 0;
 	}
 </style>

@@ -45,7 +45,7 @@
         "position": "Software Developer"
     },
     "worksSection": {
-        "title": "Projects",
+        "title": "Works",
         "works": [
             {
                 "name": "Inventory Management and Purchasing",
@@ -55,17 +55,43 @@
                     "Significantly improving efficiency and transparency in the company's procurement processes."
                 ],
                 "type": "web",
-                "image": "/screen-projects/shotsnapp-work-one.webp",
+                "image": "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_3.webp",
+                "slides": [
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_1.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_2.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_3.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_4.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_5.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_6.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_7.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_8.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_9.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_10.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_11.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_12.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_13.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_14.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_15.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_16.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_17.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_18.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_19.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_20.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_21.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_22.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_23.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_24.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_25.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sgi/image_26.webp"
+                ],
                 "technologies": [
                     "next",
-                    "react",
                     "typescript",
                     "sass",
                     "mysql"
                 ],
                 "technologies_names": [
                     "Next",
-                    "React",
                     "TypeScript",
                     "SASS",
                     "MySQL"
@@ -89,6 +115,27 @@
                 ],
                 "type": "desktop",
                 "image": "/screen-projects/FrameTestSequencer.webp",
+                "slides": [
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_1.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_2.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_3.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_4.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_5.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_6.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_7.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_8.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_9.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_10.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_11.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_12.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_13.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_14.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_15.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_16.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_17.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_18.webp",
+                    "https://raw.githubusercontent.com/AletzMan/ImagesStorage/refs/heads/main/portfolio/works/sequencer/image_19.webp"
+                ],
                 "technologies": [
                     "csharp",
                     "netcore",
@@ -112,11 +159,45 @@
                     "link": ""
                 }
             }
-        ]
+        ],
+        "buttonClose": "Close"
     },
     "projectsSection": {
         "title": "Projects",
         "projects": [
+            {
+                "name": "Code Challenge",
+                "description": [
+                    "It's an interactive application designed to improve your programming skills through quizzes and algorithm challenges.",
+                    "It is ideal for preparing for technical interviews, challenging your knowledge and learning new technologies."
+                ],
+                "type": "web",
+                "image": "/screen-projects/FrameCodeChallenge.webp",
+                "slides": [],
+                "technologies": [
+                    "next",
+                    "typescript",
+                    "openai",
+                    "sass"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "React",
+                    "TypeScript",
+                    "Open AI",
+                    "SASS"
+                ],
+                "demo": {
+                    "text": "Demo",
+                    "title": "Access to the demo project",
+                    "link": "https://code-challenge-and-quiz.vercel.app/"
+                },
+                "code": {
+                    "text": "Code",
+                    "title": "Access to the project code",
+                    "link": "https://github.com/AletzMan/code_challenge_and_quiz"
+                }
+            },
             {
                 "name": "Technolife Shop e-commerce",
                 "description": [
@@ -125,6 +206,7 @@
                 ],
                 "type": "web",
                 "image": "/screen-projects/FrameEcommerce.webp",
+                "slides": [],
                 "technologies": [
                     "next",
                     "typescript",
@@ -158,6 +240,7 @@
                 ],
                 "type": "web",
                 "image": "/screen-projects/FrameDashboard.webp",
+                "slides": [],
                 "technologies": [
                     "next",
                     "typescript",
@@ -192,6 +275,7 @@
                 ],
                 "type": "backend",
                 "image": "/screen-projects/FrameApi.webp",
+                "slides": [],
                 "technologies": [
                     "node",
                     "typescript",
@@ -215,7 +299,8 @@
                     "link": "https://github.com/AletzMan/technolife_api"
                 }
             }
-        ]
+        ],
+        "buttonClose": "Close"
     },
     "experienceSection": [
         {
@@ -360,7 +445,7 @@
         "title": "Get in touch",
         "message": [
             "Whether you're interested in working together or just want to get more information, feel free to reach out.",
-            "Looking forward to hearing from you soon!"
+            "I await your message!"
         ],
         "form": {
             "name": {

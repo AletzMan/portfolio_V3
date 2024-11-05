@@ -1,0 +1,180 @@
+---
+import ZoomIcon from "../svg/ZoomIcon.astro"
+import { Slider } from "./Slider/Slider"
+
+interface Props {
+	images: {
+		fixed: string
+		slides: string[]
+	}
+	type: string
+}
+
+const { images, type } = Astro.props
+---
+
+<section class="section">
+	<header class=` ${type === 'web' && 'section_header'}`>
+		<div class="section_buttons">
+			<div class="section_circle"></div>
+			<div class="section_circle"></div>
+			<div class="section_circle"></div>
+		</div>
+	</header>
+	<article class="section_article">
+		<img class="section_image" src={images.slides[0]} />
+		<div>
+			<Slider slides={images.slides} client:load />
+		</div>
+	</article>
+</section>
+<button class="zoom" title="Zoom" id="zoom">
+	<ZoomIcon class="zoom_icon" />
+</button>
+
+<style>
+	.section {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		width: 100%;
+		min-height: 5em;
+		margin: 1em;
+		padding: 1.75em 0 0em 0;
+		color: currentColor;
+		border-radius: 0.35em;
+		/*border: 1px solid #9c9c9c;*/
+		z-index: 1;
+		/*overflow: hidden;*/
+		transition: all ease-in-out 0.35s;
+
+		&:hover {
+			transform: scale(1.03);
+		}
+	}
+
+	.section_header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1.75em;
+		border-radius: 0.35em 0.35em 0 0;
+		background: linear-gradient(#e2e2e2, #cecece);
+	}
+
+	.section_article {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: #f1f1f1;
+
+		& > :nth-child(2) {
+			display: none;
+			visibility: collapse;
+		}
+
+		&:hover {
+			& > :nth-child(1) {
+				display: none;
+			}
+			& > :nth-child(2) {
+				display: block;
+				visibility: visible;
+			}
+		}
+	}
+
+	.section_image {
+		width: 100%;
+	}
+
+	.section_buttons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 0.35em;
+		position: absolute;
+		left: 0;
+		padding: 0 0 0 0.75em;
+		height: 100%;
+
+		& .section_buttons-options {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			column-gap: 0.5em;
+			height: 100%;
+			padding: 0 0 0 1.5em;
+
+			@media (width < 768px) {
+				display: none;
+			}
+		}
+	}
+
+	.section_circle {
+		width: 0.6em;
+		height: 0.6em;
+		border-radius: 2em;
+		background-color: var(--borderColor);
+		opacity: 0.7;
+
+		&:nth-child(1) {
+			background-color: red;
+		}
+		&:nth-child(2) {
+			background-color: #ffbd2d;
+		}
+		&:nth-child(3) {
+			background-color: #29ce42;
+		}
+	}
+
+	.zoom {
+		position: absolute;
+		top: 0.25em;
+		right: 0.25em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2em;
+		height: 2em;
+		background-color: var(--secondaryColor);
+		border-radius: var(--borderRadius);
+		border: none;
+		box-shadow: 0 0 3px 1px var(--backgroundColor);
+		z-index: 2;
+
+		&:hover {
+			cursor: pointer;
+
+			& .zoom_icon {
+				color: var(--tabColor);
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.zoom_icon {
+		width: 1.5em;
+		height: 1.5em;
+		transition: all 0.3s;
+		color: var(--backgroundColor);
+	}
+</style>
+<script>
+	import { isOpenViewWork } from "../../store/store"
+
+	const numberButtons = document.getElementsByClassName("zoom").length
+	for (let index = 0; index < numberButtons; index++) {
+		document.getElementsByClassName("zoom")[index].addEventListener("click", () => {
+			isOpenViewWork.set({ active: true, value: index })
+		})
+	}
+</script>

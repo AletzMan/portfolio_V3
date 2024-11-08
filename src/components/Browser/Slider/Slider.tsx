@@ -22,9 +22,13 @@ export function Slider({ slides }: Props) {
 
 
 
+    function HandleResetSlider(): void {
+        setNumberSlide(0)
+    }
+
     return (
         <>
-            <img className={styles.image} src={slides[numberSlide]} />
+            <img className={styles.image} src={slides[numberSlide]} onMouseOut={HandleResetSlider} />
         </>
     )
 }

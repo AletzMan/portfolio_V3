@@ -123,7 +123,7 @@ export function Form({ formTraductions }: Props) {
                 <div className={styles.success}>
                     <CheckIcon className={styles.success_icon} />
                     {formTraductions?.response?.success?.map(message => (
-                        <p className={styles.success_message}>{message}</p>
+                        <p key={message} className={styles.success_message}>{message}</p>
                     ))}
                 </div>
 

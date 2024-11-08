@@ -22,7 +22,12 @@ const { work } = Astro.props
 			<Browser images={{ fixed: work.image, slides: work.slides }} type={work.type} />
 		</div>
 		<footer class="work_footer">
-			<Button type="Button" text={work.demo.text} title={work.demo.title}>
+			<Button
+				type="Button"
+				text={work.demo.text}
+				title={work.demo.title}
+				disabled={work.demo.link === ""}
+			>
 				<ViewIcon />
 			</Button>
 			<Button
@@ -74,7 +79,7 @@ const { work } = Astro.props
 		view-timeline-name: --cardProjectLeft;
 		animation-timeline: --cardProjectLeft;
 		animation-name: showCardProjectDown;
-		animation-range: entry 20% cover 25%;
+		animation-range: entry 0% cover 35%;
 	}
 
 	@media (width < 500px) {

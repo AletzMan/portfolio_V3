@@ -50,7 +50,7 @@
             {
                 "name": "Gestión de Inventarios y Compras",
                 "description": [
-                    "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel,",
+                    "Aplicación web que permitió una modernización de los procesos empresariales al reemplazar el uso de Excel.",
                     "Cuenta con gestión de inventarios, con un sistema de requisiciones y órdenes de compra con roles y autorizaciones personalizables, lo que permite una fácil autorización y visualización desde cualquier lugar.",
                     "Mejorando significativamente la eficiencia y la transparencia en los procesos de adquisición de la empresa."
                 ],

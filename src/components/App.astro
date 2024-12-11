@@ -6,10 +6,11 @@ import Experience from "../components/Experience/Experience.astro"
 import Works from "../components/Works/Works.astro"
 import Projects from "../components/Projects/Projects.astro"
 import Contact from "../components/Contact/Contact.astro"
+import ArrowLeftIcon from "./svg/ArrowLeftIcon.astro"
 
 import { getI18n } from "../i18n/index"
 import { type Ii18n } from "../Types/i18n"
-import ArrowLeftIcon from "./svg/ArrowLeftIcon.astro"
+import ButtonTop from "./ButtonTop/ButtonTop.astro"
 const { currentLocale } = Astro
 const i18n = getI18n({ currentLocale })
 const translations: Ii18n = i18n as Ii18n
@@ -43,9 +44,13 @@ const translations: Ii18n = i18n as Ii18n
 <style>
 	main {
 		position: relative;
-		margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
 		width: 100svw;
-		padding: 0 1em;
+		padding: 0 1.25em 0 1em;
+		width: calc(100svw - 2em);
 		max-width: var(--maxWidth);
 		font-size: 20px;
 		line-height: 1.6;

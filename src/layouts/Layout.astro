@@ -3,6 +3,7 @@ import "@fontsource/jost"
 import "@fontsource-variable/montserrat"
 import { BouncingBall } from "../components/BouncingBalls/Ballon"
 import Background from "../components/Background.astro"
+import ButtonTop from "../components/ButtonTop/ButtonTop.astro"
 interface Props {
 	title: string
 	description: string
@@ -28,6 +29,7 @@ const { title, description } = Astro.props
 	<body id="containerBalls">
 		<BouncingBall client:load />
 		<slot />
+		<ButtonTop />
 		<Background />
 		<!--
 
@@ -109,6 +111,7 @@ const { title, description } = Astro.props
 		background: radial-gradient(#161c28 20%, #0c0f16);
 		scroll-behavior: smooth;
 		width: 100svw;
+		margin: 0 auto;
 		overflow-x: hidden;
 
 		&::-webkit-scrollbar {
@@ -139,7 +142,7 @@ const { title, description } = Astro.props
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 65%;
-		opacity: 0.05;
+		opacity: 0.2;
 		transition: opacity 0.3s ease-in-out;
 		color: var(--textColor);
 		z-index: 0;

@@ -50,7 +50,7 @@
             {
                 "name": "Inventory Management and Purchasing",
                 "description": [
-                    "Web application that enabled a modernization of business processes by replacing the use of Excel,",
+                    "Web application that enabled a modernization of business processes by replacing the use of Excel.",
                     "It features inventory management, with a system of requisitions and purchase orders with customizable roles and authorizations, allowing for easy authorization and viewing from anywhere.",
                     "Significantly improving efficiency and transparency in the company's procurement processes."
                 ],
@@ -169,7 +169,8 @@
                 "name": "Code Challenge",
                 "description": [
                     "It's an interactive application designed to improve your programming skills through quizzes and algorithm challenges.",
-                    "It is ideal for preparing for technical interviews, challenging your knowledge and learning new technologies."
+                    "It is ideal for preparing for technical interviews, challenging your knowledge and learning new technologies.",
+                    "This project won the Midudev Hackathon with Vercel. I used Vercel's AI SDK to create an innovative experience, and this achievement inspires me to keep improving the project."
                 ],
                 "type": "web",
                 "image": "/screen-projects/FrameCodeChallenge.webp",

@@ -6,12 +6,6 @@ interface Props {
 	hiddenTitle?: boolean
 }
 const { title, class: className, id, hiddenTitle } = Astro.props
-import TabIcon from "../svg/TabIcon.astro"
-import AddIcon from "../svg/AddIcon.astro"
-import ArrowUpIcon from "../svg/ArrowUpIcon.astro"
-import PanelIcon from "../svg/PanelIcon.astro"
-import ReloadIcon from "../svg/ReloadIcon.astro"
-import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 ---
 
 <section class={`section ${className}`}>
@@ -23,29 +17,7 @@ import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 		)
 	}
 	<span class="separator" id={id}></span>
-	<!--<header class="section_header">
-		<div class="section_buttons">
-			<div class="section_circle"></div>
-			<div class="section_circle"></div>
-			<div class="section_circle"></div>
-			<div class="section_buttons-options">
-				<PanelIcon class="section_icon" />
-				<ArrowLeftIcon class="section_icon" />
-				<ArrowLeftIcon class="section_icon section_icon-arrowRight" />
-			</div>
-		</div>
-		<div class="section_input">
-			<span class="section_input-text" data-title={title}>{title}</span>
-			<ReloadIcon class="section_reload" />
-		</div>
-		<div class="section_options">
-			<ArrowUpIcon class="section_icon" />
-			<AddIcon class="section_icon" />
-			<TabIcon class="section_icon" />
-		</div>
-	</header> -->
 	<slot />
-	<!--<footer class="section_footer"></footer> -->
 </section>
 
 <style>
@@ -55,25 +27,14 @@ import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		gap: 0.5em;
 		min-height: calc(100svh - 6.5em);
-		margin: 5em 0 0 0;
+		margin: 0 0 6em 0;
 		padding: 1.75em 0 1em 0;
 		color: currentColor;
 		border-radius: var(--borderRadius);
-		/*backdrop-filter: blur(4px);*/
-		/*border: 4px double var(--borderColor);*/
-		/*background: url("/graph-paper.svg");
-		background-repeat: repeat;
-		background-size: 5%;*/
 		z-index: 1;
 		pointer-events: none;
-		/*overflow-y: hidden;*/
-		/*view-timeline-name: --image;
-		view-timeline-axis: block;
-		animation-timeline: --image;
-		animation-name: show;
-		animation-range: entry 5% cover 50%;
-		animation-fill-mode: both;*/
 	}
 
 	.works_title {
@@ -90,17 +51,6 @@ import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
 			color: #ffffff07;
 		}
 	}
-
-	/*@keyframes show {
-		from {
-			opacity: 0;
-			scale: 75%;
-		}
-		to {
-			opacity: 1;
-			scale: 100%;
-		}
-	}*/
 
 	.separator {
 		position: absolute;

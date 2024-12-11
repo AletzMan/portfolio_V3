@@ -4,11 +4,13 @@ import SocialButtons from "../SocialButtons.astro"
 import Section from "../Section/Section.astro"
 
 import { getI18n } from "../../i18n/index"
+import ButtonLanguage from "../ButtonLanguage.astro"
 const { currentLocale } = Astro
 const i18n = getI18n({ currentLocale })
 ---
 
 <Section title={i18n.navigationMenu.home.text} id="home" hiddenTitle>
+	<ButtonLanguage />
 	<article class="home_content">
 		<div class="home_picture">
 			<img class="photoProfile" src="/profile-photo.webp" alt="Alejandro Garcia" />
@@ -40,11 +42,19 @@ const i18n = getI18n({ currentLocale })
 			<TechTypeIcon type="mobile" />
 			<TechTypeIcon type="desktop" />
 		</div>
+		<div class="description">
+			<p class="description_p">
+				Experiencia en automatización, pruebas funcionales y creación de aplicaciones web.
+				Me enfoco en construir soluciones eficientes e innovadoras.
+			</p>
+			<p class="description_p">¡Explora mi trabajo y conectemos!</p>
+		</div>
 		<SocialButtons hasButtonCV />
 	</article>
 </Section>
 <style>
 	.home_content {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -62,7 +72,7 @@ const i18n = getI18n({ currentLocale })
 	}
 
 	.home_content h1 {
-		font-size: 3rem;
+		font-size: 2.5rem;
 		padding: 0;
 		height: max-content;
 		margin: 0;
@@ -76,7 +86,7 @@ const i18n = getI18n({ currentLocale })
 	.home_content h2 {
 		padding: 0;
 		margin: 0;
-		font-size: 2rem;
+		font-size: 1.75rem;
 		color: var(--secondaryColor);
 
 		@media (width < 500px) {
@@ -129,11 +139,7 @@ const i18n = getI18n({ currentLocale })
 		justify-content: center;
 		align-items: center;
 		column-gap: 1em;
-		margin: 0 0 3em 0;
-
-		@media (width < 500px) {
-			margin: 0 0 2em 0;
-		}
+		margin: 0;
 	}
 
 	.logosRotate {
@@ -153,6 +159,23 @@ const i18n = getI18n({ currentLocale })
 			height: 190px;
 			left: calc(50% - 95px);
 			top: calc(50% - 95px);
+		}
+	}
+
+	.description {
+		margin: 1em 0 3em 0;
+
+		@media (width < 500px) {
+			margin: 0 0 2em 0;
+		}
+
+		& p {
+			margin-top: 0;
+			font-size: 0.75em;
+			font-weight: 400;
+			max-width: 65ch;
+			text-wrap: pretty;
+			color: var(--primaryColor);
 		}
 	}
 

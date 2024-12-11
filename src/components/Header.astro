@@ -10,36 +10,37 @@ const i18n = getI18n({ currentLocale })
 ---
 
 <header class="header">
-	<!-- <Logo />-->
-	<NavigationMenu
+	<!--<Logo />
+	 <NavigationMenu
 		props={i18n.navigationMenu}
 		currentLocale={currentLocale === "es" ? "" : "en"}
 		client:load
-	/>
+	/>-->
 	<div class="header_options">
-		<!-- -->
+		<!-- 
 		<ButtonLanguage />
-		<!--<ThemeIcon /> -->
+		<ThemeIcon />-->
 	</div>
 </header>
 <style>
 	.header {
 		position: fixed;
-		top: 0;
+		top: -1em;
+		right: 0.45em;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: calc(100svw - 2em);
-		max-width: calc(var(--maxWidth) - 2em);
-		height: 3.5rem;
+		width: 100svw;
+		height: 0.35em;
 		margin: 1em auto 0 auto;
 		border-radius: var(--borderRadius);
-		background-color: #8b8a8a30;
-		border: 1px solid var(--borderColor);
-		backdrop-filter: blur(30px);
+		background-color: #0c0f16;
+		/*border: 1px solid var(--borderColor);*/
+		/*backdrop-filter: blur(30px);*/
 		z-index: 5;
 
 		& .header_options {
+			position: sticky;
 			display: flex;
 			flex-direction: row;
 			column-gap: 1em;

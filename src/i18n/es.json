@@ -42,7 +42,11 @@
         }
     },
     "homeSection": {
-        "position": "Desarrollador de Software"
+        "position": "Desarrollador de Software",
+        "description": [
+            "Experiencia en soluciones tecnológicas, desde aplicaciones multiplataforma hasta automatización de procesos. Siempre busco crear proyectos innovadores y eficientes.",
+            "¡Explora mi trabajo y conectemos!"
+        ]
     },
     "worksSection": {
         "title": "Trabajos",
@@ -318,7 +322,7 @@
             "age_end": 2024,
             "name": "Desarrollador de Software",
             "company": "Freelance",
-            "text": "En mi carrera como desarrollado independiente, he relizado proyectos para agilizar los procesos de empresas, viendo sus necesidades y desarrollado el sofware a la medida.",
+            "text": "En mi carrera como desarrollador independiente, he relizado proyectos para agilizar los procesos de empresas, viendo sus necesidades y desarrollado el sofware a la medida.",
             "position": "LEFT",
             "technologies": [
                 "javascript",

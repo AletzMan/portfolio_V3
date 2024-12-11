@@ -42,7 +42,11 @@
         }
     },
     "homeSection": {
-        "position": "Software Developer"
+        "position": "Software Developer",
+        "description": [
+            "Experience in technological solutions, from multiplatform applications to process automation. I always seek to create innovative and efficient projects.",
+            "Explore my work and let's connect!"
+        ]
     },
     "worksSection": {
         "title": "Works",

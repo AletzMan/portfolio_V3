@@ -19,6 +19,7 @@ export interface Ii18n {
 	}
 	homeSection: {
 		position: string
+		description: string[]
 	}
 	worksSection: {
 		title: string

@@ -43,11 +43,11 @@ const i18n = getI18n({ currentLocale })
 			<TechTypeIcon type="desktop" />
 		</div>
 		<div class="description">
-			<p class="description_p">
-				Experiencia en automatización, pruebas funcionales y creación de aplicaciones web.
-				Me enfoco en construir soluciones eficientes e innovadoras.
-			</p>
-			<p class="description_p">¡Explora mi trabajo y conectemos!</p>
+			{
+				i18n.homeSection.description.map((description) => (
+					<p class="description_p">{description}</p>
+				))
+			}
 		</div>
 		<SocialButtons hasButtonCV />
 	</article>

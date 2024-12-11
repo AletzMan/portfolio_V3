@@ -1,5 +1,8 @@
 ---
 import type { Ii18nExperience } from "../../Types/i18n"
+import ArrowLeftIcon from "../svg/ArrowLeftIcon.astro"
+import HardIcon from "../svg/HardIcon.astro"
+import SoftIcon from "../svg/SoftIcon.astro"
 
 interface Props {
 	experienceDescription: Ii18nExperience
@@ -31,7 +34,8 @@ const { experienceDescription } = Astro.props
 		<span class="experience_date-end">{experienceDescription.age_end}</span>
 	</div>
 	<footer class="experience_footer">
-		<h2 class="experience_footer-title">Soft Skills</h2>
+		<!-- <button class="buttonSkill"><SoftIcon class="buttonSkill_icon" /> Soft Skills</button>
+		<button class="buttonSkill"><HardIcon class="buttonSkill_icon" /> Hard Skills</button>
 		<article class="experience_skills">
 			{
 				experienceDescription.softskills.map((soft) => (
@@ -45,13 +49,43 @@ const { experienceDescription } = Astro.props
 				experienceDescription.name_technologies.map((tech, index) => (
 					<span class="experience_hardskill">{tech}</span>
 				))
-			}
-		</article>
+			}-->
+		<details name="skills" class="details">
+			<summary class="summary">
+				<div class="summary_title">
+					<SoftIcon class="buttonSkill_icon" /> Soft Skills
+				</div>
+				<ArrowLeftIcon class="summary_arrow" />
+			</summary>
+			<article class="experience_skills">
+				{
+					experienceDescription.softskills.map((soft) => (
+						<span class="experience_softskill">{soft}</span>
+					))
+				}
+			</article>
+		</details>
+		<details name="skills" class="details">
+			<summary class="summary">
+				<div class="summary_title">
+					<HardIcon class="buttonSkill_icon" /> Hard Skills
+				</div>
+				<ArrowLeftIcon class="summary_arrow" />
+			</summary>
+			<article class="experience_skills">
+				{
+					experienceDescription.name_technologies.map((tech, index) => (
+						<span class="experience_hardskill">{tech}</span>
+					))
+				}
+			</article>
+		</details>
 	</footer>
 </article>
 
 <style>
 	.experience {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		position: relative;
@@ -160,9 +194,9 @@ const { experienceDescription } = Astro.props
 	}
 
 	.experience_description {
-		font-size: 0.65em;
+		font-size: 0.75em;
 		font-weight: 300;
-		padding: 0.5em 0;
+		padding: 1.25em 0.5em;
 		text-wrap: pretty;
 		color: var(--primaryColor);
 	}
@@ -265,21 +299,66 @@ const { experienceDescription } = Astro.props
 	}
 
 	.experience_footer {
+		position: relative;
 		display: flex;
 		flex-direction: column;
-		gap: 0.25em;
 	}
 
-	.experience_footer-title {
-		font-size: 0.7em;
-		font-weight: 500;
+	.details {
+		position: absolute;
 		color: var(--primaryColor);
+		border-radius: 0.25em;
+		pointer-events: all;
+		border: 1px solid var(--borderColor);
+		background-color: var(--textColor);
+
+		&[open] {
+			z-index: 5;
+			.summary .summary_arrow {
+				transform: rotate(-90deg);
+			}
+		}
+
+		&:nth-child(2) {
+			right: 0;
+		}
+	}
+
+	.summary {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.25em 0.5em;
+		gap: 0.75em;
+		border: 1px solid var(--borderColor);
+		background-color: var(--backgroundColor);
+		border-radius: 0.25em;
+
+		.summary_title {
+			display: flex;
+			align-items: center;
+			gap: 1em;
+			font-size: 0.75em;
+		}
+
+		.summary_arrow {
+			width: 1.25em;
+			height: 1.25em;
+			transform: rotate(-270deg);
+			stroke-width: 2;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+
+	.buttonSkill_icon {
+		width: 1.5em;
+		height: 1.5em;
 	}
 
 	.experience_skills {
 		display: flex;
 		flex-flow: row wrap;
 		gap: 0.25em;
+		padding: 0.5em 0.75em;
 	}
 
 	.experience_softskill {

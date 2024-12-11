@@ -77,6 +77,10 @@ const { project } = Astro.props
 			5px 5px 15px 1px #101115dd,
 			-7px -7px 15px #2e303a00;
 
+		@media (width < 600px) {
+			max-width: 100svw;
+		}
+
 		&:hover .project_image {
 			transform: scale(1.13);
 		}

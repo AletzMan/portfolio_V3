@@ -21,16 +21,16 @@
 		top: 0;
 		left: 0;
 		width: calc(100svw - 1.5em);
-		height: calc(100svh - 1em);
-		height: 100%;
+		height: calc(100% - 1em);
 		margin: 0.5em;
 		z-index: -1;
 		overflow: hidden;
-		border-radius: 1em 1em 0 0;
+		border-radius: 1em;
 		border: 4px double var(--borderColor);
 		background: url("/graph-paper.svg");
 		background-repeat: repeat;
 		background-size: 5%;
+		pointer-events: none;
 
 		@media (width < 500px) {
 			width: calc(100svw - 1em);

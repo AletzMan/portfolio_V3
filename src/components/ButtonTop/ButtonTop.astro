@@ -1,0 +1,64 @@
+---
+import ArrowTop from "../svg/ArrowTop.astro"
+---
+
+<button class="buttonTop">
+	<ArrowTop class="icon" />
+</button>
+
+<style>
+	.buttonTop {
+		position: fixed;
+		bottom: 1em;
+		right: 2em;
+		width: 2.5em;
+		height: 2.5em;
+		border: none;
+		border-radius: 0.25em;
+		background-color: #ffffff10;
+		backdrop-filter: blur(4px);
+		z-index: 10;
+		cursor: pointer;
+		animation: animationTop 1s infinite alternate;
+
+		&:hover > .icon {
+			color: var(--primaryColor);
+		}
+	}
+
+	.buttonTopHidden {
+		display: none;
+	}
+
+	.icon {
+		color: var(--tabColorLight);
+		transition: all 0.3s ease-in-out;
+	}
+
+	@keyframes animationTop {
+		to {
+			transform: translateY(-1em);
+		}
+	}
+</style>
+
+<script>
+	const buttonTop = document.querySelector(".buttonTop") as HTMLButtonElement
+	document.body.addEventListener("wheel", HandleScrollBody)
+	buttonTop.classList.add("buttonTopHidden")
+	buttonTop?.addEventListener("click", HandleClickScroll)
+
+	function HandleScrollBody(this: HTMLElement, ev: WheelEvent) {
+		const posY = document.body.getClientRects().item(0)?.y || 0
+		if (posY < -300) {
+			buttonTop.classList.remove("buttonTopHidden")
+		} else {
+			buttonTop.classList.add("buttonTopHidden")
+		}
+	}
+
+	function HandleClickScroll() {
+		document.body.scrollIntoView()
+		buttonTop.classList.add("buttonTopHidden")
+	}
+</script>

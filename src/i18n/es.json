@@ -101,7 +101,7 @@
                     "MySQL"
                 ],
                 "demo": {
-                    "text": "Ver demo",
+                    "text": "Demo",
                     "title": "Accede a la demo del proyecto",
                     "link": ""
                 },
@@ -153,7 +153,7 @@
                     "MySQL"
                 ],
                 "demo": {
-                    "text": "Ver demo",
+                    "text": "Demo",
                     "title": "Accede a la demo del proyecto",
                     "link": ""
                 },
@@ -194,7 +194,7 @@
                     "SASS"
                 ],
                 "demo": {
-                    "text": "Ver demo",
+                    "text": "Demo",
                     "title": "Accede a la demo del proyecto",
                     "link": "https://code-challenge-and-quiz.vercel.app/"
                 },
@@ -232,7 +232,7 @@
                     "PostgreSQL"
                 ],
                 "demo": {
-                    "text": "Ver demo",
+                    "text": "Demo",
                     "title": "Accede a la demo del proyecto",
                     "link": "https://technolife-ecommerce.vercel.app/"
                 },
@@ -267,7 +267,7 @@
                     "PostgreSQL"
                 ],
                 "demo": {
-                    "text": "Ver demo",
+                    "text": "Demo",
                     "title": "Accede a la demo del proyecto",
                     "link": "https://dashboard-ecommerce-seven.vercel.app/dashboard/overview"
                 },
@@ -310,6 +310,37 @@
                     "text": "Code",
                     "title": "Acceso al código del proyecto",
                     "link": "https://github.com/AletzMan/technolife_api"
+                }
+            },
+            {
+                "name": "TV Movie Hub",
+                "description": [
+                    "Es tu compañero ideal para explorar el mundo del cine y la televisión.",
+                    "Descubre sinopsis detalladas, tráilers exclusivos, calificaciones de la crítica y del público, y todo lo que necesitas saber sobre tus películas y series favoritas.",
+                    "Crea listas personalizadas, agrega a favoritos y recibe recomendaciones personalizadas basadas en tus gustos."
+                ],
+                "type": "web",
+                "image": "/screen-projects/FrameTVMovieHub.webp",
+                "slides": [
+                    ""
+                ],
+                "technologies": [
+                    "next",
+                    "typescript"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "TypeScript"
+                ],
+                "demo": {
+                    "text": "Demo",
+                    "title": "Accede a la demo del proyecto",
+                    "link": "https://tvmoviehub.vercel.app/"
+                },
+                "code": {
+                    "text": "Code",
+                    "title": "Acceso al código del proyecto",
+                    "link": "https://github.com/AletzMan/tvmoviehub"
                 }
             }
         ],

@@ -303,6 +303,37 @@
                     "title": "Access to the project code",
                     "link": "https://github.com/AletzMan/technolife_api"
                 }
+            },
+            {
+                "name": "TV Movie Hub",
+                "description": [
+                    "It's your ideal companion for exploring the world of film and television.",
+                    "Discover detailed synopses, exclusive trailers, critic and audience ratings, and everything you need to know about your favorite movies and series.",
+                    "Create custom lists, add to favorites, and get personalized recommendations based on your tastes."
+                ],
+                "type": "web",
+                "image": "/screen-projects/FrameTVMovieHub.webp",
+                "slides": [
+                    ""
+                ],
+                "technologies": [
+                    "next",
+                    "typescript"
+                ],
+                "technologies_names": [
+                    "Next",
+                    "TypeScript"
+                ],
+                "demo": {
+                    "text": "Demo",
+                    "title": "Access to the demo project",
+                    "link": "https://tvmoviehub.vercel.app/"
+                },
+                "code": {
+                    "text": "Code",
+                    "title": "Access to the project code",
+                    "link": "https://github.com/AletzMan/tvmoviehub"
+                }
             }
         ],
         "buttonClose": "Close"
